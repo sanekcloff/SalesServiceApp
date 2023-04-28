@@ -1,7 +1,6 @@
 USE SalesServiceAppDB
 GO
 
-
 INSERT INTO [dbo].[Categories]
            ([Title])
      VALUES
@@ -92,7 +91,6 @@ INSERT INTO [dbo].[ProductCategories]
 		   (25,8)
 GO
 
-
 INSERT INTO [dbo].[Services]
            ([Title],[Description],[CostPerHour],[DateOfAdd])
      VALUES
@@ -103,22 +101,40 @@ INSERT INTO [dbo].[Services]
 		   ('Техподдержка 1С','Поддержка 1С – профессиональное решение вопросов по использованию 1С без ограничения по количеству обращений. За фиксированную абонентскую плату.',1600,'14-05-2012')
 GO
 
+INSERT INTO [dbo].[Clients]
+           ([LastName],[FirstName],[MiddleName],[Email],[Phone],[Login],[Password])
+     VALUES
+           ('Аксёнов','Александр','Игоревич','email@nail.ru','87645738671','client','client')
+GO
+
+INSERT INTO [dbo].[Departments]
+           ([Title])
+     VALUES
+           ('Директор'),
+		   ('Управление проектами'),
+		   ('Отдел разработки'),
+		   ('Отдел продаж'),
+		   ('Отдел маркетинга'),
+		   ('Отдел кадров'),
+		   ('Отдел финансов '),
+		   ('Техническая поддержка')
+GO
+
 INSERT INTO [dbo].[Employees]
-           ([LastName],[FirstName],[MiddleName],[Login],[Password],[IsAdmin])
+           ([LastName],[FirstName],[MiddleName],[Login],[Password],[DepartmentId])
      VALUES
            ('Фамилия','Имя','Отчество','admin','admin',1)
 GO
 
-
 INSERT INTO [dbo].[ProductOrder]
-           ([LastName],[FirstName],[MiddleName],[Email],[Phone],[DateOfAdd],[IsCompleted],[ProductId])
+           ([DateOfAdd],[Status],[ProductId],[ClientId])
      VALUES
-           ('Зубенко','Михаил','Петрович','gym@mail.ru','86736457381','27-04-2023',0,1)
+           ('28-04-2023','Ожидание',1,1)
 GO
 
 INSERT INTO [dbo].[ServiceOrders]
-           ([LastName],[FirstName],[MiddleName],[Email],[Phone],[DateOfAdd],[IsCompleted],[ServiceId])
+           ([DateOfAdd],[Status],[ServiceId],[ClientId])
      VALUES
-           ('Зубенко','Михаил','Петрович','gym@mail.ru','86736457381','27-04-2023',0,1)
+           ('27-04-2023','Ожидание',1,1)
 GO
 

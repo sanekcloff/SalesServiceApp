@@ -1,0 +1,173 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageBrush x:Key="Exit"
+                ImageSource="\Resources\Styles\Pictures\Window\Exit.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Exit_Active"
+                ImageSource="\Resources\Styles\Pictures\Window\Exit_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Exit_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Window\Exit_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Maximize"
+                ImageSource="\Resources\Styles\Pictures\Window\Maximize.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Maximize_Active"
+                ImageSource="\Resources\Styles\Pictures\Window\Maximize_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Maximize_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Window\Maximize_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Normal"
+                ImageSource="\Resources\Styles\Pictures\Window\Normal.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Normal_Active"
+                ImageSource="\Resources\Styles\Pictures\Window\Normal_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Normal_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Window\Normal_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Collapse"
+                ImageSource="\Resources\Styles\Pictures\Window\Collapse.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Collapse_Active"
+                ImageSource="\Resources\Styles\Pictures\Window\Collapse_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Collapse_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Window\Collapse_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="ButtonStyle1" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource ButtonColor}"
+                            CornerRadius="8"
+                            Height="20"
+                            x:Name="Border">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          x:Name="ContentPsnt"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle2" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="FontWeight" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ExitButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Exit}"
+                            Height="20"
+                            Width="20"
+                            Margin="5,2"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Exit_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Exit_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MaximizeButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Maximize}"
+                            Height="20"
+                            Width="20"
+                            Margin="5,2"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Maximize_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Maximize_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NormalButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Normal}"
+                            Height="20"
+                            Width="20"
+                            Margin="5,2"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Normal_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Normal_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CollapseButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Collapse}"
+                            Height="20"
+                            Width="20"
+                            Margin="5,2"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Collapse_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Collapse_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

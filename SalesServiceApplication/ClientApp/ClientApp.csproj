@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\Icon.ico" />
+    <None Remove="Resources\Logos\Logo.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Collapse.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Collapse_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Collapse_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Exit.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Exit_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Exit_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Maximize.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Maximize_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Maximize_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Normal.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Normal_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Window\Normal_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Wrench.png" />
+    <None Remove="Resources\Styles\Pictures\Wrench_Active.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppData\AppData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Logos\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Collapse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Collapse_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Collapse_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Exit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Exit_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Exit_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Maximize.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Maximize_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Maximize_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Normal_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Window\Normal_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Wrench.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Wrench_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
