@@ -23,20 +23,5 @@ namespace ClientApp.Views
         {
             InitializeComponent();
         }
-
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void CollapseButton_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left) this.DragMove();
-        }
     }
 }

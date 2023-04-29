@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AppData.Migrations
 {
     /// <inheritdoc />
-    public partial class Ver1Fix : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -92,6 +92,27 @@ namespace AppData.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Grade = table.Column<int>(type: "int", nullable: false),
+                    ClientId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Clients_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Clients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
@@ -142,6 +163,28 @@ namespace AppData.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "News",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PublicationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Header = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_News", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_News_Employees_EmployeeId",
+                        column: x => x.EmployeeId,
+                        principalTable: "Employees",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductOrder",
                 columns: table => new
                 {
@@ -162,7 +205,7 @@ namespace AppData.Migrations
                         column: x => x.ClientId,
                         principalTable: "Clients",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction); //WARNING
                     table.ForeignKey(
                         name: "FK_ProductOrder_Employees_EmployeeId",
                         column: x => x.EmployeeId,
@@ -173,7 +216,7 @@ namespace AppData.Migrations
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction); //WARNING
                 });
 
             migrationBuilder.CreateTable(
@@ -197,7 +240,7 @@ namespace AppData.Migrations
                         column: x => x.ClientId,
                         principalTable: "Clients",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction); //WARNING
                     table.ForeignKey(
                         name: "FK_ServiceOrders_Employees_EmployeeId",
                         column: x => x.EmployeeId,
@@ -208,13 +251,18 @@ namespace AppData.Migrations
                         column: x => x.ServiceId,
                         principalTable: "Services",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction); //WARNING
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_DepartmentId",
                 table: "Employees",
                 column: "DepartmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_News_EmployeeId",
+                table: "News",
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductCategories_CategoryId",
@@ -242,6 +290,11 @@ namespace AppData.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reviews_ClientId",
+                table: "Reviews",
+                column: "ClientId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ServiceOrders_ClientId",
                 table: "ServiceOrders",
                 column: "ClientId");
@@ -261,10 +314,16 @@ namespace AppData.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "News");
+
+            migrationBuilder.DropTable(
                 name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "ProductOrder");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "ServiceOrders");

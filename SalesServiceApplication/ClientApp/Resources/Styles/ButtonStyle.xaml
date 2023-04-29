@@ -41,6 +41,86 @@
                 ImageSource="\Resources\Styles\Pictures\Window\Collapse_Pressed.png"
                 Stretch="Uniform"/>
 
+    <ImageBrush x:Key="AboutUs"
+                ImageSource="\Resources\Styles\Pictures\Button\AboutUs.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="AboutUs_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\AboutUs_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="AboutUs_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\AboutUs_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Questions"
+                ImageSource="\Resources\Styles\Pictures\Button\Questions.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Questions_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Questions_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Questions_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Questions_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="History"
+                ImageSource="\Resources\Styles\Pictures\Button\History.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="History_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\History_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="History_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\History_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="LogOut"
+                ImageSource="\Resources\Styles\Pictures\Button\LogOut.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="LogOut_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\LogOut_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="LogOut_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\LogOut_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="News"
+                ImageSource="\Resources\Styles\Pictures\Button\News.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="News_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\News_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="News_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\News_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Orders"
+                ImageSource="\Resources\Styles\Pictures\Button\Orders.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Orders_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Orders_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Orders_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Orders_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Products"
+                ImageSource="\Resources\Styles\Pictures\Button\Products.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Products_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Products_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Products_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Products_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Reviews"
+                ImageSource="\Resources\Styles\Pictures\Button\Reviews.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Reviews_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Reviews_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Reviews_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Reviews_Pressed.png"
+                Stretch="Uniform"/>
+
     <Style x:Key="ButtonStyle1" TargetType="Button">
         <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
         <Setter Property="FontFamily" Value="Cascadia Code"/>
@@ -164,6 +244,174 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Collapse_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AboutUsButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource AboutUs}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource AboutUs_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource AboutUs_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="QuestionsButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Questions}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Questions_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Questions_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HistoryButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource History}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource History_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource History_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LogOutButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource LogOut}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource LogOut_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource LogOut_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NewsButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource News}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource News_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource News_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="OrdersButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Orders}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ProductsButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Products}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Products_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Products_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ReviewsButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Reviews}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Reviews_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Reviews_Pressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

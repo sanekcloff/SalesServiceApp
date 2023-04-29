@@ -10,6 +10,34 @@
   <ItemGroup>
     <None Remove="Resources\Icons\Icon.ico" />
     <None Remove="Resources\Logos\Logo.png" />
+    <None Remove="Resources\Styles\Pictures\Button\AboutUs.png" />
+    <None Remove="Resources\Styles\Pictures\Button\AboutUs_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\AboutUs_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\buttons.psd" />
+    <None Remove="Resources\Styles\Pictures\Button\Employees.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Employees_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Employees_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\History.png" />
+    <None Remove="Resources\Styles\Pictures\Button\History_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\History_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\LogOut.png" />
+    <None Remove="Resources\Styles\Pictures\Button\LogOut_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\LogOut_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\News.png" />
+    <None Remove="Resources\Styles\Pictures\Button\News_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\News_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Orders.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Orders_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Orders_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Products.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Products_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Products_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Questions.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Questions_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Questions_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Reviews.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Reviews_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Reviews_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Active.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Pressed.png" />
@@ -22,8 +50,6 @@
     <None Remove="Resources\Styles\Pictures\Window\Normal.png" />
     <None Remove="Resources\Styles\Pictures\Window\Normal_Active.png" />
     <None Remove="Resources\Styles\Pictures\Window\Normal_Pressed.png" />
-    <None Remove="Resources\Styles\Pictures\Wrench.png" />
-    <None Remove="Resources\Styles\Pictures\Wrench_Active.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +68,90 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Logos\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\AboutUs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\AboutUs_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\AboutUs_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\buttons.psd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Employees.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Employees_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Employees_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\History.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\History_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\History_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\LogOut.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\LogOut_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\LogOut_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\News.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\News_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\News_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Orders.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Orders_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Orders_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Products.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Products_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Products_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Questions.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Questions_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Questions_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Reviews.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Reviews_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Reviews_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Window\Collapse.png">
@@ -78,12 +188,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Window\Normal_Pressed.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Styles\Pictures\Wrench.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Styles\Pictures\Wrench_Active.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

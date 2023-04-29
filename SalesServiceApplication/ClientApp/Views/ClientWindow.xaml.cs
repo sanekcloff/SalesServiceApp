@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AppData.DataBaseData;
+using AppData.Entities;
+using ClientApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,11 @@ namespace ClientApp.Views
     /// </summary>
     public partial class ClientWindow : Window
     {
-        public ClientWindow()
+        public ClientWindow(ApplicationDbContext ctx, Client client)
         {
             InitializeComponent();
+            DataContext = new ClientViewModel(ctx, client, ClientPage);
+            Title = $"Учётная запись: {client.FullName}";
         }
     }
 }

@@ -26,15 +26,5 @@ namespace ClientApp.Views
             InitializeComponent();
             DataContext = new RegistrationViewModel(ctx);
         }
-
-        private void CollapseButton_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left) this.DragMove();
-        }
     }
 }

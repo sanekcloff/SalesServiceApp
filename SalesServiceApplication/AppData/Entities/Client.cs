@@ -9,6 +9,13 @@ namespace AppData.Entities
 {
     public class Client
     {
+        public Client()
+        {
+            ProductOrders = new HashSet<ProductOrder>();
+            ServiceOrders = new HashSet<ServiceOrder>();
+            Reviews = new HashSet<Review>();
+            Questions = new HashSet<Question>();
+        }
         public int Id { get; set; }
 
         public string LastName { get; set; } = null!;
@@ -19,6 +26,11 @@ namespace AppData.Entities
         public string? Organization { get; set; } = null!;
         public string Login { get; set; } = null!;
         public string Password { get; set; } = null!;
+
+        public ICollection<ProductOrder> ProductOrders { get; set; } = null!;
+        public ICollection<ServiceOrder> ServiceOrders { get; set; } = null!;
+        public ICollection<Review> Reviews { get; set; } = null!;
+        public ICollection<Question> Questions { get; set; } = null!;
 
         [NotMapped]
         public string FullName { get => $"{LastName} {FirstName} {MiddleName}"; }

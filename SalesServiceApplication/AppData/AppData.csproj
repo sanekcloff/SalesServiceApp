@@ -34,6 +34,11 @@
     <None Remove="Storage\Pictures\product_8.png" />
     <None Remove="Storage\Pictures\product_80.png" />
     <None Remove="Storage\Pictures\product_9.png" />
+    <None Remove="Storage\Pictures\service_1.png" />
+    <None Remove="Storage\Pictures\service_2.png" />
+    <None Remove="Storage\Pictures\service_3.png" />
+    <None Remove="Storage\Pictures\service_4.png" />
+    <None Remove="Storage\Pictures\service_5.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -102,6 +107,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Storage\Pictures\product_9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Storage\Pictures\service_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Storage\Pictures\service_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Storage\Pictures\service_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Storage\Pictures\service_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Storage\Pictures\service_5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

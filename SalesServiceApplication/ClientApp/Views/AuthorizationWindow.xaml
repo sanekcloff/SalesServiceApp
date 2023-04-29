@@ -6,85 +6,51 @@
         xmlns:local="clr-namespace:ClientApp.Views"
         xmlns:vm="clr-namespace:ClientApp.ViewModels"
         mc:Ignorable="d"
+        x:Name="AuthorizationWind"
         Title="Авторизация" Height="450" Width="300"
-        WindowStyle="None" AllowsTransparency="True"
-        Background="Transparent"
+        Background="{StaticResource BackgroundLight}"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Icon="\Resources\Icons\Icon.ico">
+        Icon="{StaticResource Icon}">
     <Window.DataContext>
         <vm:AuthorizationViewModel/>
     </Window.DataContext>
-    <Window.Template>
-        <ControlTemplate TargetType="Window">
-            <Border CornerRadius="15" Background="{StaticResource BackgroundLight}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition/>
-                        <RowDefinition Height="30"/>
-                    </Grid.RowDefinitions>
-                    <Border Grid.Row="0"
-                            Background="{StaticResource BackgroundVeryDark}"
-                            CornerRadius="15,15,0,0"
-                            MouseDown="Border_MouseDown">
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="2"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0"
-                                   Text="Авторизация"
-                                   Style="{StaticResource TextBlock1}"
-                                   VerticalAlignment="Center"
-                                   Margin="10,0"/>
-                            <Button Content="Свернуть"
-                                Click="CollapseButton_Click"
-                                x:Name="CollapseButton"
-                                Style="{StaticResource CollapseButton}"
-                                Grid.Column="1"/>
-                            <Button Content="Закрыть"
-                                Click="ExitButton_Click"
-                                x:Name="ExitButton"
-                                Style="{StaticResource ExitButton}"
-                                Grid.Column="2"/>
-                        </Grid>
-                    </Border>
-                    <StackPanel VerticalAlignment="Center"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center"
                                 Grid.Row="1">
-                        <Image Source="\Resources\Logos\Logo.png"
+            <Image Source="\Resources\Logos\Logo.png"
                                Height="150"
                                Width="150"
                                Stretch="Uniform"
                                Margin="0,0,0,40"/>
-                        <TextBlock Text="ЛОГИН"
+            <TextBlock Text="ЛОГИН"
                                    HorizontalAlignment="Center"
                                    Style="{StaticResource TextBlock1}"/>
-                        <TextBox Width="170"
+            <TextBox Width="170"
                                  Style="{StaticResource TextBoxStyle2}"
                                  Margin="0,0,0,10"
                                  Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBlock Text="ПАРОЛЬ"
+            <TextBlock Text="ПАРОЛЬ"
                                    HorizontalAlignment="Center"
                                    Style="{StaticResource TextBlock1}"/>
-                        <TextBox Width="170"
+            <TextBox Width="170"
                                  Style="{StaticResource TextBoxStyle2}"
                                  Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button Content="Войти"
+            <Button Content="Войти"
                                 Width="120"
                                 Margin="0,20,0,0"
                                 Style="{StaticResource ButtonStyle1}"
                                 Command="{Binding AuthorizationButton}"/>
-                        <Button Content="Регистрация"
+            <Button Content="Регистрация"
                                 Width="80"
                                 Margin="10"
                                 Style="{StaticResource ButtonStyle2}"
                                 Command="{Binding RegistrationButton}"/>
-                    </StackPanel>
-                </Grid>
-            </Border>
-        </ControlTemplate>
-    </Window.Template>
+        </StackPanel>
+    </Grid>
 </Window>

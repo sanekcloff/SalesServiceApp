@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageSource x:Key="Logo">\Resources\Logos\Logo.png</ImageSource>
+    <ImageSource x:Key="Icon">\Resources\Icons\Icon.ico</ImageSource>
+</ResourceDictionary>

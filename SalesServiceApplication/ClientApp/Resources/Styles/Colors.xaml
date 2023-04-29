@@ -9,6 +9,7 @@
     <!--#endregion-->
     <!--#region Foregrounds-->
     <SolidColorBrush x:Key="ForegroundColor1" Color="White"/>
+    <SolidColorBrush x:Key="ForegroundColor2" Color="Black"/>
     <!--#endregion-->
     <!--#region Button-->
     <SolidColorBrush x:Key="ButtonColor" Color="#ffab5e"/>

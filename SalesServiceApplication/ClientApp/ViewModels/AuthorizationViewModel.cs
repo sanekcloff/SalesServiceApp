@@ -42,7 +42,7 @@ namespace ClientApp.ViewModels
             {
                 if (ClientIsExits())
                 {
-                    var ClientWindow = new ClientWindow();
+                    var ClientWindow = new ClientWindow(_ctx, _clientService.GetClients().Single(c=>c.Password==Password && c.Login==Login));
                     var CurrentWindow = Application.Current.MainWindow;
                     ClientWindow.Show();
                     Application.Current.MainWindow = ClientWindow;

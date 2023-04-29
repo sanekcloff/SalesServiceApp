@@ -20,10 +20,16 @@ namespace AppData.Entities
         public string? Description { get; set; } = null!;
         public decimal CostPerHour { get; set; }
         public DateTime DateOfAdd { get; set; }
+        public string? Picture { get; set; } = null!; 
 
         public ICollection<ServiceOrder> ServiceOrders { get; set; } = null!;
 
         [NotMapped]
         public bool IsNegotiable { get => CostPerHour > 0 ? false : true; }
+        public string CorrectPicturePath
+        {
+            get => (Picture == string.Empty || Picture == null)
+                ? @"\Storage\Pictures\NonPicture.png" : @$"\Storage\Pictures\{Picture}";
+        }
     }
 }

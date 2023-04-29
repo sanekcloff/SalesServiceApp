@@ -138,6 +138,35 @@ namespace AppData.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("AppData.Entities.New", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Header")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PublicationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("News");
+                });
+
             modelBuilder.Entity("AppData.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -231,6 +260,65 @@ namespace AppData.Migrations
                     b.ToTable("ProductOrder");
                 });
 
+            modelBuilder.Entity("AppData.Entities.Question", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Topic")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("AppData.Entities.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Grade")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("AppData.Entities.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -246,6 +334,9 @@ namespace AppData.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Picture")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -306,6 +397,17 @@ namespace AppData.Migrations
                     b.Navigation("Department");
                 });
 
+            modelBuilder.Entity("AppData.Entities.New", b =>
+                {
+                    b.HasOne("AppData.Entities.Employee", "Employee")
+                        .WithMany("News")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("AppData.Entities.ProductCategory", b =>
                 {
                     b.HasOne("AppData.Entities.Category", "Category")
@@ -328,7 +430,7 @@ namespace AppData.Migrations
             modelBuilder.Entity("AppData.Entities.ProductOrder", b =>
                 {
                     b.HasOne("AppData.Entities.Client", "Client")
-                        .WithMany()
+                        .WithMany("ProductOrders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -350,10 +452,40 @@ namespace AppData.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("AppData.Entities.Question", b =>
+                {
+                    b.HasOne("AppData.Entities.Client", "Client")
+                        .WithMany("Questions")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AppData.Entities.Employee", "Employee")
+                        .WithMany("Questions")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("AppData.Entities.Review", b =>
+                {
+                    b.HasOne("AppData.Entities.Client", "Client")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
             modelBuilder.Entity("AppData.Entities.ServiceOrder", b =>
                 {
                     b.HasOne("AppData.Entities.Client", "Client")
-                        .WithMany()
+                        .WithMany("ServiceOrders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -380,6 +512,17 @@ namespace AppData.Migrations
                     b.Navigation("ProductCategories");
                 });
 
+            modelBuilder.Entity("AppData.Entities.Client", b =>
+                {
+                    b.Navigation("ProductOrders");
+
+                    b.Navigation("Questions");
+
+                    b.Navigation("Reviews");
+
+                    b.Navigation("ServiceOrders");
+                });
+
             modelBuilder.Entity("AppData.Entities.Department", b =>
                 {
                     b.Navigation("Employees");
@@ -387,7 +530,11 @@ namespace AppData.Migrations
 
             modelBuilder.Entity("AppData.Entities.Employee", b =>
                 {
+                    b.Navigation("News");
+
                     b.Navigation("ProductOrders");
+
+                    b.Navigation("Questions");
 
                     b.Navigation("ServiceOrders");
                 });

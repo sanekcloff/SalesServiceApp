@@ -27,6 +27,9 @@ namespace AppData.DataBaseData
         public DbSet<ProductOrder> ProductOrder { get; set; } = null!;
         public DbSet<Service> Services { get; set; } = null!;
         public DbSet<ServiceOrder> ServiceOrders { get; set; } = null!;
+        public DbSet<Review> Reviews { get; set; } = null!;
+        public DbSet<New> News { get; set; } = null!;
+        public DbSet<Question> Questions { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
