@@ -22,9 +22,10 @@ namespace ClientApp.ViewModels
             _productService = new(ctx);
             _categoryService = new(ctx);
             _serviceService = new(ctx);
-            _employeeService = new(ctx);
             _productOrderService = new(ctx);
             _serviceOrderService = new(ctx);
+            _newsService = new(ctx);
+            _reviewService = new(ctx);
 
             _client = client;
             ClientPage = clientPage;
@@ -35,9 +36,11 @@ namespace ClientApp.ViewModels
         private ProductService _productService;
         private CategoryService _categoryService;
         private ServiceService _serviceService;
-        private EmployeeService _employeeService;
         private ProductOrderService _productOrderService;
         private ServiceOrderService _serviceOrderService;
+        private QuestionService _questionService;
+        private NewsService _newsService;
+        private ReviewService _reviewService;
         #endregion
         #region Fields & Properties
         private Client _client;
@@ -46,13 +49,13 @@ namespace ClientApp.ViewModels
         public UserControl ClientPage { get => _clientPage; set => Set(ref _clientPage, value, nameof(ClientPage)); }
         #endregion
         #region Methods
-        private void OpenMainPage() => ClientPage.Content = new MainPage();
-        private void OpenOrdersPage() => ClientPage.Content = new OrdersPage();
-        private void OpenHistoryPage() => ClientPage.Content = new HistoryPage();
-        private void OpenQuestionsPage() => ClientPage.Content = new QuestionsPage();
-        private void OpenNewsPage() => ClientPage.Content = new NewsPage();
+        private void OpenMainPage() => ClientPage.Content = new MainPage(_client,_productService,_categoryService,_serviceService,_productOrderService,_serviceOrderService);
+        private void OpenOrdersPage() => ClientPage.Content = new OrdersPage(_client,_categoryService,_productOrderService,_serviceOrderService);
+        private void OpenHistoryPage() => ClientPage.Content = new HistoryPage(_client,_categoryService,_productOrderService,_serviceOrderService);
+        private void OpenQuestionsPage() => ClientPage.Content = new QuestionsPage(_client,_questionService);
+        private void OpenNewsPage() => ClientPage.Content = new NewsPage(_newsService);
         private void OpenAboutUsPage() => ClientPage.Content = new AboutUsPage();
-        private void OpenReviewsPage() => ClientPage.Content = new ReviewsPage();
+        private void OpenReviewsPage() => ClientPage.Content = new ReviewsPage(_client,_reviewService);
         private void LogOut()
         {
             var AuthorizationWindow = new AuthorizationWindow();

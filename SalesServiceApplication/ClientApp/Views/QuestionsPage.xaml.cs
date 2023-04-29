@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AppData.Entities;
+using AppData.Services;
+using ClientApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,10 @@ namespace ClientApp.Views
     /// </summary>
     public partial class QuestionsPage : UserControl
     {
-        public QuestionsPage()
+        public QuestionsPage(Client client, QuestionService questionService)
         {
             InitializeComponent();
+            DataContext = new QuestionViewModel(client, questionService);
         }
     }
 }

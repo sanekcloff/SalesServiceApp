@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AppData.Entities;
+using AppData.Services;
+using ClientApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,10 @@ namespace ClientApp.Views
     /// </summary>
     public partial class HistoryPage : UserControl
     {
-        public HistoryPage()
+        public HistoryPage(Client client, CategoryService categoryService, ProductOrderService productOrderService, ServiceOrderService serviceOrderService)
         {
             InitializeComponent();
+            DataContext = new HistoryViewModel(client, categoryService, productOrderService, serviceOrderService);
         }
     }
 }

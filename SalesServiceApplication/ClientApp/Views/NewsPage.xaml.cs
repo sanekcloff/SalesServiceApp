@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppData.Services;
+using ClientApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,10 @@ namespace ClientApp.Views
     /// </summary>
     public partial class NewsPage : UserControl
     {
-        public NewsPage()
+        public NewsPage(NewsService newsService)
         {
             InitializeComponent();
+            DataContext = new NewsViewModel(newsService);
         }
     }
 }
