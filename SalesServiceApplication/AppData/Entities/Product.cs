@@ -31,11 +31,12 @@ namespace AppData.Entities
         public string CorrectPicturePath
         {
             get => (Picture == string.Empty || Picture == null)
-                ? @"\Storage\Pictures\NonPicture.png" : @$"\Storage\Pictures\{Picture}";
+                ? @"\Resources\Pictures\NonPicture.png" : @$"\Resources\Pictures\{Picture}";
         }
 
-        public bool IsDiscount { get => Discount != 0 ? true : false; }
-        public decimal CorrectCost { get => IsDiscount ? Cost * (Discount/100) : Cost; }
-        public int CorrectDiscount { get => (int)(100 - Discount); }
+        public bool IsDiscount { get => Discount != 0; }
+        public bool IsNew { get => (DateTime.Now.Date-DateOfAdd.Date).TotalDays < 20; }
+        public decimal CorrectCost { get => IsDiscount ? Cost-(Cost * (Discount/100)) : Cost; }
+        public int CorrectDiscount { get => (int)(Discount); }
     }
 }

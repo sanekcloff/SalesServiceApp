@@ -15,6 +15,7 @@ namespace AppData.Entities
         public DateTime DateOfAdd { get; set; }
         public DateTime? DateOfComplete { get; set; }
         public string Status { get; set; } = null!;
+        public decimal PaymentAmount { get; set; }
 
         public int ProductId { get; set; }
         public int ClientId { get; set; }
@@ -23,5 +24,8 @@ namespace AppData.Entities
         public Product Product { get; set; } = null!;
         public Client Client { get; set; } = null!;
         public Employee Employee { get; set; } = null!;
+
+        [NotMapped]
+        public bool IsCompleted { get => (DateOfComplete!=null && EmployeeId!=null); }
     }
 }

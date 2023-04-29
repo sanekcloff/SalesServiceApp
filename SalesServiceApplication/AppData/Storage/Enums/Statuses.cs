@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppData.Storage.Enums
 {
-    enum Statuses
+    public enum Statuses
     {
         Ожидание,
         Выполнение,

@@ -25,11 +25,12 @@ namespace AppData.Entities
         public ICollection<ServiceOrder> ServiceOrders { get; set; } = null!;
 
         [NotMapped]
-        public bool IsNegotiable { get => CostPerHour > 0 ? false : true; }
+        public bool IsNegotiable { get => CostPerHour == 0; }
         public string CorrectPicturePath
         {
             get => (Picture == string.Empty || Picture == null)
-                ? @"\Storage\Pictures\NonPicture.png" : @$"\Storage\Pictures\{Picture}";
+                ? @"\Resources\Pictures\NonPicture.png" : @$"\Resources\Pictures\{Picture}";
         }
+        public bool IsNew { get => (DateTime.Now.Date - DateOfAdd.Date).TotalDays < 20; }
     }
 }

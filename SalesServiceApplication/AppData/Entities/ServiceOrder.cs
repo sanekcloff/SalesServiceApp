@@ -22,5 +22,8 @@ namespace AppData.Entities
         public Service Service { get; set; } = null!;
         public Client Client { get; set; } = null!;
         public Employee Employee { get; set; } = null!;
+
+        [NotMapped]
+        public bool IsCompleted { get => (DateOfComplete != null && EmployeeId != null); }
     }
 }

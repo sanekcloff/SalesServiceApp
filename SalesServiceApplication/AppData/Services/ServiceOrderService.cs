@@ -17,12 +17,12 @@ namespace AppData.Services
         {
             _ctx = ctx;
         }
-        public ICollection<ServiceOrder> GetServiceServices() 
+        public ICollection<ServiceOrder> GetServiceOrders() 
             => _ctx.ServiceOrders
             .Include(so => so.Employee)
             .Include(so => so.Service)
             .ToList();
-        public ServiceOrder? GetServiceService()
+        public ServiceOrder? GetServiceOrder()
             => _ctx.ServiceOrders
             .Include(so => so.Employee)
             .Include(so => so.Service)

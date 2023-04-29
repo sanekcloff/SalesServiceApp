@@ -121,6 +121,16 @@
                 ImageSource="\Resources\Styles\Pictures\Button\Reviews_Pressed.png"
                 Stretch="Uniform"/>
 
+    <ImageBrush x:Key="AddOrder"
+                ImageSource="\Resources\Styles\Pictures\Button\AddOrder.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="AddOrder_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\AddOrder_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="AddOrder_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\AddOrder_Pressed.png"
+                Stretch="Uniform"/>
+
     <Style x:Key="ButtonStyle1" TargetType="Button">
         <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
         <Setter Property="FontFamily" Value="Cascadia Code"/>
@@ -412,6 +422,80 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Reviews_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AddOrderButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{StaticResource Orders}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                        </Border>
+                        <TextBlock Grid.Column="1"
+                                   Text="Заказать"
+                                   FontFamily="Cascadia Code"
+                                   Foreground="{StaticResource ButtonColor}"
+                                   VerticalAlignment="Center"
+                                   x:Name="TextBlock1"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Active}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Pressed}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RemoveOrderButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{StaticResource Orders}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                        </Border>
+                        <TextBlock Grid.Column="1"
+                                   Text="Отменить"
+                                   FontFamily="Cascadia Code"
+                                   Foreground="{StaticResource ButtonColor}"
+                                   VerticalAlignment="Center"
+                                   x:Name="TextBlock1"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Active}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Pressed}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorPressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
