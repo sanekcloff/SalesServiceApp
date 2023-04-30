@@ -26,6 +26,7 @@ namespace ClientApp.ViewModels
             _serviceOrderService = new(ctx);
             _newsService = new(ctx);
             _reviewService = new(ctx);
+            _questionService = new(ctx);
 
             _client = client;
             ClientPage = clientPage;
@@ -52,7 +53,7 @@ namespace ClientApp.ViewModels
         private void OpenMainPage() => ClientPage.Content = new MainPage(_client,_productService,_categoryService,_serviceService,_productOrderService,_serviceOrderService);
         private void OpenOrdersPage() => ClientPage.Content = new OrdersPage(_client,_categoryService,_productOrderService,_serviceOrderService);
         private void OpenHistoryPage() => ClientPage.Content = new HistoryPage(_client,_categoryService,_productOrderService,_serviceOrderService);
-        private void OpenQuestionsPage() => ClientPage.Content = new QuestionsPage(_client,_questionService);
+        private void OpenQuestionsPage() => ClientPage.Content = new QuestionsPage(_client, _questionService);
         private void OpenNewsPage() => ClientPage.Content = new NewsPage(_newsService);
         private void OpenAboutUsPage() => ClientPage.Content = new AboutUsPage();
         private void OpenReviewsPage() => ClientPage.Content = new ReviewsPage(_client,_reviewService);

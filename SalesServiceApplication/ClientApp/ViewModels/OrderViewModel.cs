@@ -101,14 +101,14 @@ namespace ClientApp.ViewModels
         public string ServicesCount { get => _servicesCount; set => Set(ref _servicesCount, value, nameof(ServicesCount)); }
         #endregion
         #region Methods
-        private ICollection<ProductOrder> GetProductOrders() => SortProducts(SearchProducts(FiltherProducts(_productOrderService.GetProductOrders().Where(po=>po.ClientId==_client.Id).ToList())));
-        private ICollection<ServiceOrder> GetServiceOrders() => SortServices(SearchServices(_serviceOrderService.GetServiceOrders().Where(so=>so.ClientId==_client.Id).ToList()));
+        private ICollection<ProductOrder> GetProductOrders() => SortProducts(SearchProducts(FiltherProducts(_productOrderService.GetProductOrders().Where(po=>po.ClientId==_client.Id && po.IsCompleted==false).ToList())));
+        private ICollection<ServiceOrder> GetServiceOrders() => SortServices(SearchServices(_serviceOrderService.GetServiceOrders().Where(so=>so.ClientId==_client.Id && so.IsCompleted == false).ToList()));
         private void UpdateLists()
         {
             ProductOrders = new List<ProductOrder>(GetProductOrders());
             ServiceOrders = new List<ServiceOrder>(GetServiceOrders());
-            ProductsCount = $"{ProductOrders.Count}/{_productOrderService.GetProductOrders().Count}";
-            ServicesCount = $"{ServiceOrders.Count}/{_serviceOrderService.GetServiceOrders().Count}";
+            ProductsCount = $"{ProductOrders.Count}/{_productOrderService.GetProductOrders().Where(po => po.IsCompleted == false).ToList().Count}";
+            ServicesCount = $"{ServiceOrders.Count}/{_serviceOrderService.GetServiceOrders().Where(so => so.IsCompleted == false).ToList().Count}";
         }
         private ICollection<ProductOrder> SearchProducts(ICollection<ProductOrder> productOrders)
         {

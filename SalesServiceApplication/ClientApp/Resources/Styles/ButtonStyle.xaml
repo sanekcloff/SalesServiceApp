@@ -131,6 +131,36 @@
                 ImageSource="\Resources\Styles\Pictures\Button\AddOrder_Pressed.png"
                 Stretch="Uniform"/>
 
+    <ImageBrush x:Key="Add"
+                ImageSource="\Resources\Styles\Pictures\Button\Add.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Add_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Add_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Add_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Add_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Edit"
+                ImageSource="\Resources\Styles\Pictures\Button\Edit.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Edit_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Edit_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Edit_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Edit_Pressed.png"
+                Stretch="Uniform"/>
+
+    <ImageBrush x:Key="Delete"
+                ImageSource="\Resources\Styles\Pictures\Button\Delete.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Delete_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Delete_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Delete_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Delete_Pressed.png"
+                Stretch="Uniform"/>
+
     <Style x:Key="ButtonStyle1" TargetType="Button">
         <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
         <Setter Property="FontFamily" Value="Cascadia Code"/>
@@ -496,6 +526,75 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Pressed}"/>
                             <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AddButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Add}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Add_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Add_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="EditButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Edit}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Edit_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Edit_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DeleteButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Delete}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Delete_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Delete_Pressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

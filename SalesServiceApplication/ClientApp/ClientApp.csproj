@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="Resources\Icons\Icon.ico" />
+    <None Remove="Resources\Icons\QuestionsIcon.ico" />
+    <None Remove="Resources\Icons\ReviewsIcon.ico" />
     <None Remove="Resources\Logos\Logo.png" />
     <None Remove="Resources\Pictures\NonPicture.png" />
     <None Remove="Resources\Pictures\product_1.png" />
@@ -36,10 +38,19 @@
     <None Remove="Resources\Styles\Pictures\Button\AboutUs.png" />
     <None Remove="Resources\Styles\Pictures\Button\AboutUs_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\AboutUs_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Add.png" />
     <None Remove="Resources\Styles\Pictures\Button\AddOrder.png" />
     <None Remove="Resources\Styles\Pictures\Button\AddOrder_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\AddOrder_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Add_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Add_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Button\buttons.psd" />
+    <None Remove="Resources\Styles\Pictures\Button\Delete.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Delete_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Delete_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Edit.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Edit_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Edit_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Button\Employees.png" />
     <None Remove="Resources\Styles\Pictures\Button\Employees_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Employees_Pressed.png" />
@@ -64,6 +75,7 @@
     <None Remove="Resources\Styles\Pictures\Button\Reviews.png" />
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Star.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Active.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Pressed.png" />
@@ -91,6 +103,12 @@
 
   <ItemGroup>
     <Resource Include="Resources\Icons\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\QuestionsIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\ReviewsIcon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Logos\Logo.png">
@@ -174,6 +192,9 @@
     <Resource Include="Resources\Styles\Pictures\Button\AboutUs_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\AddOrder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -183,7 +204,31 @@
     <Resource Include="Resources\Styles\Pictures\Button\AddOrder_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Add_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Add_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\buttons.psd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Delete_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Delete_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Edit_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Edit_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\Employees.png">
@@ -256,6 +301,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\Reviews_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Star.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Window\Collapse.png">

@@ -38,9 +38,9 @@
                                                Margin="5"/>
                                         <StackPanel Grid.Column="2"
                                                     Margin="5">
-                                            <StackPanel>
-                                                <TextBlock Text="НОВИНКА:"
-                                                           FontSize="14"
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="НОВИНКА"
+                                                           FontSize="16"
                                                            x:Name="TextBlock3"
                                                            Style="{StaticResource TextBlock3}"
                                                            FontWeight="Bold"
@@ -56,9 +56,12 @@
                                                        FontWeight="Medium"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
-                                                    HorizontalAlignment="Right"
-                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
                                                     Margin="5">
+                                            <TextBlock Text="Цена:"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding CorrectCost, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"/>
@@ -121,7 +124,7 @@
                                             <ColumnDefinition Width="12"/>
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="105"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
@@ -136,9 +139,9 @@
                                                Margin="5"/>
                                         <StackPanel Grid.Column="2"
                                                     Margin="5">
-                                            <StackPanel>
-                                                <TextBlock Text="НОВИНКА:"
-                                                           FontSize="14"
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="НОВИНКА"
+                                                           FontSize="16"
                                                            x:Name="TextBlock3"
                                                            Style="{StaticResource TextBlock3}"
                                                            FontWeight="Bold"
@@ -154,9 +157,12 @@
                                                        FontWeight="Medium"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
-                                                    HorizontalAlignment="Right"
-                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
                                                     Margin="5">
+                                            <TextBlock Text="Цена за час:"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding CostPerHour, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"
@@ -240,20 +246,15 @@
                                                        FontSize="16"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
                                                        Style="{StaticResource TextBlock2}"/>
-                                                <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
-                                                           Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock1"
-                                                           Visibility="Collapsed"/>
-                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
-                                                           Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock2"
-                                                           Visibility="Collapsed"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
-                                                    HorizontalAlignment="Right"
-                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
                                                     Margin="5">
+                                            <TextBlock Text="Цена:"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"/>
@@ -271,10 +272,6 @@
                                         <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
                                         <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
                                     </Trigger>
-                                    <DataTrigger Binding="{Binding IsCompleted}" Value="true">
-                                        <Setter TargetName="TextBlock1" Property="Visibility" Value="Visible"/>
-                                        <Setter TargetName="TextBlock2" Property="Visibility" Value="Visible"/>
-                                    </DataTrigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
@@ -306,7 +303,7 @@
                                             <ColumnDefinition Width="12"/>
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="105"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
@@ -328,20 +325,15 @@
                                                        FontSize="16"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
                                                        Style="{StaticResource TextBlock2}"/>
-                                                <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
-                                                           Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock3"
-                                                           Visibility="Collapsed"/>
-                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
-                                                           Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock4"
-                                                           Visibility="Collapsed"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
-                                                    HorizontalAlignment="Right"
-                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
                                                     Margin="5">
+                                            <TextBlock Text="Цена за час:"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding Service.CostPerHour, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"
@@ -369,9 +361,407 @@
                                         <Setter TargetName="TextBlock1" Property="Visibility" Value="Collapsed"/>
                                         <Setter TargetName="TextBlock2" Property="Visibility" Value="Visible"/>
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding IsCompleted}" Value="true">
-                                        <Setter TargetName="TextBlock3" Property="Visibility" Value="Visible"/>
-                                        <Setter TargetName="TextBlock4" Property="Visibility" Value="Visible"/>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListView" x:Key="ProductHistoryListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource BackgroundWhite}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <Image Source="{Binding Product.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
+                                               Height="100"
+                                               Width="100"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="1"
+                                               Margin="5"/>
+                                        <StackPanel Grid.Column="2"
+                                                    Margin="5">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Product.Title, UpdateSourceTrigger=PropertyChanged, StringFormat=Товар: {0}}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="16"/>
+                                                <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                                <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           x:Name="TextBlock1"/>
+                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           x:Name="TextBlock2"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="3"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
+                                                    Margin="5">
+                                            <TextBlock Text="Цена:"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                            <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                        </StackPanel>
+                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListView" x:Key="ServiceHistoryListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource BackgroundWhite}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="105"/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <Image Source="{Binding Service.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
+                                               Height="100"
+                                               Width="100"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="1"
+                                               Margin="5"/>
+                                        <StackPanel Grid.Column="2"
+                                                    Margin="5">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Service.Title, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="16"/>
+                                                <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                                <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           x:Name="TextBlock3"/>
+                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           x:Name="TextBlock4"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="3"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
+                                                    Margin="5">
+                                            <TextBlock Text="Цена за час:"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                            <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
+                                                       FontSize="14"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       x:Name="TextBlock1"/>
+                                        </StackPanel>
+                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="ListView" x:Key="NewsListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource BackgroundWhite}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <StackPanel Grid.Column="1"
+                                                    Margin="5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding PublicationDate,StringFormat={}{0:d}:,ConverterCulture=ru-RU, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="20"/>
+                                                <TextBlock Text="{Binding Header, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="20"/>
+                                            </StackPanel>
+                                            <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                        <Border Grid.Column="2" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ListView" x:Key="QuestionsListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource BackgroundWhite}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <StackPanel Grid.Column="1"
+                                                    Margin="5">
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontWeight="Bold"
+                                                           FontSize="16"
+                                                           x:Name="OganizationTextBlock"
+                                                           Visibility="Collapsed"/>
+                                                <TextBlock Text="{Binding Client.FullName,StringFormat=От:{0:d},UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="16"/>
+                                                <TextBlock Text="{Binding Topic,StringFormat=Тема:{0:d},UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="16"/>
+                                                <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical"
+                                                        x:Name="AnswerTextBlock"
+                                                        Visibility="Collapsed"
+                                                        Margin="0,5,0,0">
+                                                <TextBlock Text="{Binding Employee.FullName,StringFormat=Ответил:{0},UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="16"/>
+                                                <TextBlock Text="{Binding Answer, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <Border Grid.Column="2" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding IsAnswered}" Value="true">
+                                        <Setter TargetName="AnswerTextBlock" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Client.IsOrganization}" Value="true">
+                                        <Setter TargetName="OganizationTextBlock" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ListView" x:Key="ReviewsListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource BackgroundWhite}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <StackPanel Grid.Column="1"
+                                                    Margin="5">
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontWeight="Bold"
+                                                           FontSize="16"
+                                                           x:Name="OganizationTextBlock"
+                                                           Visibility="Collapsed"/>
+                                                <TextBlock Text="{Binding Client.FullName,StringFormat=От:{0:d},UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="16"/>
+                                                <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2"
+                                                    Margin="5"
+                                                    Orientation="Horizontal"
+                                                    HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding Grade,UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="24"
+                                                       VerticalAlignment="Center"
+                                                       Margin="0,0,3,0"/>
+                                            <Image Source="\Resources\Styles\Pictures\Star.png"
+                                                   Height="30"
+                                                   Stretch="Uniform"/>
+                                        </StackPanel>
+                                        <Border Grid.Column="3" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding Client.IsOrganization}" Value="true">
+                                        <Setter TargetName="OganizationTextBlock" Property="Visibility" Value="Visible"/>
                                     </DataTrigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>

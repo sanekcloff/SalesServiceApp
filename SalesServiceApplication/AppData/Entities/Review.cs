@@ -12,6 +12,7 @@ namespace AppData.Entities
 
         public string Text { get; set; } = null!;
         public int Grade { get; set; }
+        public DateTime DateOfAdd { get; set; }
 
         public int ClientId { get; set; }
 

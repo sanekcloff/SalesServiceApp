@@ -34,5 +34,6 @@ namespace AppData.Entities
 
         [NotMapped]
         public string FullName { get => $"{LastName} {FirstName} {MiddleName}"; }
+        public bool IsOrganization { get => Organization!=null; }
     }
 }
