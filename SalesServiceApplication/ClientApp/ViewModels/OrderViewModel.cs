@@ -107,8 +107,8 @@ namespace ClientApp.ViewModels
         {
             ProductOrders = new List<ProductOrder>(GetProductOrders());
             ServiceOrders = new List<ServiceOrder>(GetServiceOrders());
-            ProductsCount = $"{ProductOrders.Count}/{_productOrderService.GetProductOrders().Where(po => po.IsCompleted == false).ToList().Count}";
-            ServicesCount = $"{ServiceOrders.Count}/{_serviceOrderService.GetServiceOrders().Where(so => so.IsCompleted == false).ToList().Count}";
+            ProductsCount = $"{ProductOrders.Count}/{_productOrderService.GetProductOrders().Where(po => po.IsCompleted == false && po.ClientId == _client.Id).ToList().Count}";
+            ServicesCount = $"{ServiceOrders.Count}/{_serviceOrderService.GetServiceOrders().Where(so => so.IsCompleted == false && so.ClientId == _client.Id).ToList().Count}";
         }
         private ICollection<ProductOrder> SearchProducts(ICollection<ProductOrder> productOrders)
         {

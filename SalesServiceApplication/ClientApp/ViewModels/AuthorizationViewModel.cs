@@ -34,7 +34,20 @@ namespace ClientApp.ViewModels
         public string Password { get => _password; set => Set(ref _password, value, nameof(Password)); }
         #endregion
         #region Methods
-        private bool ClientIsExits() => _clientService.GetClients().Any(c=>c.Login==Login && c.Password==Password);
+        private bool ClientIsExits()
+        {
+            var isExist = false;
+            try
+            {
+                isExist = _clientService.GetClients().Any(c => c.Login == Login && c.Password == Password);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return isExist;
+        }
+
         private bool PropertiesIsNull() => (string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Login)) ? true : false;
         private void OpenClientWindow()
         {
