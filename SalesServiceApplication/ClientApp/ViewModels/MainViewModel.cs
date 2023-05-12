@@ -162,9 +162,11 @@ namespace ClientApp.ViewModels
             else
                 return services;
         }
+        private bool SelectedProductIsNull() => SelectedProduct == null;
+        private bool SelectedServiceIsNull() => SelectedService == null;
         private void PurchaseProduct()
         {
-            if (SelectedProduct != null)
+            if (!SelectedProductIsNull())
             {
                 _productOrderService.Insert(new ProductOrder { DateOfAdd = DateTime.Now, Client = _client, Status = Statuses.Ожидание.ToString(), Product = SelectedProduct, PaymentAmount=SelectedProduct.CorrectCost });
                 MessageBox.Show($"Заказ на товар \"{SelectedProduct.Title}\" успешно оформлен, ожидайте обратной связи.", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -175,7 +177,7 @@ namespace ClientApp.ViewModels
         }
         private void PurchaseService()
         {
-            if (SelectedService != null)
+            if (!SelectedServiceIsNull())
             {
                 _serviceOrderService.Insert(new ServiceOrder { DateOfAdd = DateTime.Now, Client = _client, Status = Statuses.Ожидание.ToString(), Service = SelectedService });
                 MessageBox.Show($"Заказ на услугу \"{SelectedService.Title}\" успешно оформлен, ожидайте обратной связи.", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);

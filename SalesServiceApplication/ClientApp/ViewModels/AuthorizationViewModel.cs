@@ -51,21 +51,18 @@ namespace ClientApp.ViewModels
         private bool PropertiesIsNull() => (string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Login)) ? true : false;
         private void OpenClientWindow()
         {
-            if (!PropertiesIsNull())
+            if (PropertiesIsNull())
+                MessageBox.Show("Все поля должны быть заполнены!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (ClientIsExits())
             {
-                if (ClientIsExits())
-                {
-                    var ClientWindow = new ClientWindow(_ctx, _clientService.GetClients().Single(c=>c.Password==Password && c.Login==Login));
-                    var CurrentWindow = Application.Current.MainWindow;
-                    ClientWindow.Show();
-                    Application.Current.MainWindow = ClientWindow;
-                    CurrentWindow.Close();
-                }
-                else
-                    MessageBox.Show("Учётная запись не найдена!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                var ClientWindow = new ClientWindow(_ctx, _clientService.GetClients().Single(c => c.Password == Password && c.Login == Login), _clientService);
+                var CurrentWindow = Application.Current.MainWindow;
+                ClientWindow.Show();
+                Application.Current.MainWindow = ClientWindow;
+                CurrentWindow.Close();
             }
             else
-                MessageBox.Show("Все поля должны быть заполнены!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Учётная запись не найдена!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         private void OpenRegistrationtWindow()
         {

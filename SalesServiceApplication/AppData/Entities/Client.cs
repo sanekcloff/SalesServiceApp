@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,7 @@ namespace AppData.Entities
             Reviews = new HashSet<Review>();
             Questions = new HashSet<Question>();
         }
+
         public int Id { get; set; }
 
         public string LastName { get; set; } = null!;
@@ -23,7 +26,7 @@ namespace AppData.Entities
         public string MiddleName { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Phone { get; set; } = null!;
-        public string? Organization { get; set; } = null!;
+        public string Organization { get; set; } = null!;
         public string Login { get; set; } = null!;
         public string Password { get; set; } = null!;
 

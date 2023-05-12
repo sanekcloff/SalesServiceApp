@@ -17,7 +17,7 @@ namespace ClientApp.ViewModels
 {
     public class ClientViewModel : ViewModelBase
     {
-        public ClientViewModel(ApplicationDbContext ctx, Client client, UserControl clientPage)
+        public ClientViewModel(ApplicationDbContext ctx, Client client, UserControl clientPage, ClientService clientService)
         {
             _productService = new(ctx);
             _categoryService = new(ctx);
@@ -27,6 +27,7 @@ namespace ClientApp.ViewModels
             _newsService = new(ctx);
             _reviewService = new(ctx);
             _questionService = new(ctx);
+            _clientService = new(ctx);
 
             _client = client;
             ClientPage = clientPage;
@@ -42,6 +43,7 @@ namespace ClientApp.ViewModels
         private QuestionService _questionService;
         private NewsService _newsService;
         private ReviewService _reviewService;
+        private ClientService _clientService;
         #endregion
         #region Fields & Properties
         private Client _client;
@@ -57,6 +59,7 @@ namespace ClientApp.ViewModels
         private void OpenNewsPage() => ClientPage.Content = new NewsPage(_newsService);
         private void OpenAboutUsPage() => ClientPage.Content = new AboutUsPage();
         private void OpenReviewsPage() => ClientPage.Content = new ReviewsPage(_client,_reviewService);
+        private void OpenAccountPage() => ClientPage.Content = new AccountPage(_client,_clientService);
         private void LogOut()
         {
             var AuthorizationWindow = new AuthorizationWindow();
@@ -74,6 +77,7 @@ namespace ClientApp.ViewModels
         public ICommand NewsPageButton =>new Command(newspage => OpenNewsPage());
         public ICommand AboutUsPageButton =>new Command(aboutuspage => OpenAboutUsPage());
         public ICommand ReviewsPageButton => new Command(reviewspage => OpenReviewsPage());
+        public ICommand AccountPageButton => new Command(accountpage => OpenAccountPage());
         public ICommand LogOutButton =>new Command(logout => LogOut());
         #endregion
     }

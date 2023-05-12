@@ -126,9 +126,10 @@ namespace ClientApp.ViewModels
             new QuestionManagerWindow(_client, null, _questionService).ShowDialog();
             UpdateLists();
         }
+        private bool SelectedQuestionIsNull() => SelectedQuestion == null;
         private void OpenEditQuestionManagerWindow()
         {
-            if (SelectedQuestion!=null)
+            if (!SelectedQuestionIsNull())
             {
                 new QuestionManagerWindow(_client, SelectedQuestion, _questionService).ShowDialog();
                 UpdateLists();
@@ -138,7 +139,7 @@ namespace ClientApp.ViewModels
         }
         private void DeleteQuestion()
         {
-            if (SelectedQuestion != null)
+            if (!SelectedQuestionIsNull())
             {
                 var result = MessageBox.Show($"Удалить вопрос на тему \"{SelectedQuestion.Topic}\"?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)

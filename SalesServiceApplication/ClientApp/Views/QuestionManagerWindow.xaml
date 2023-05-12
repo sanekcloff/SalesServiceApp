@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApp.Views"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="QuestionManagerWindow" Height="250" Width="300"
         Background="{StaticResource BackgroundLight}"
         ResizeMode="NoResize"
@@ -30,6 +31,7 @@
             <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource TextBoxStyle3}"
                      Height="100"
+                     TextWrapping="Wrap"
                      HorizontalContentAlignment="Left"
                      VerticalContentAlignment="Top"
                      Padding="2"/>

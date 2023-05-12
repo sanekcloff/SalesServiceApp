@@ -511,7 +511,7 @@
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Top"
                                                     Margin="5">
-                                            <TextBlock Text="Цена за час:"
+                                            <TextBlock Text="Цена:"
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
@@ -631,7 +631,7 @@
                                         <StackPanel Grid.Column="1"
                                                     Margin="5">
                                             <StackPanel Orientation="Vertical">
-                                                <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged}"
+                                                <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged, StringFormat=Организация: {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            FontWeight="Bold"
                                                            FontSize="16"
@@ -718,7 +718,7 @@
                                         <StackPanel Grid.Column="1"
                                                     Margin="5">
                                             <StackPanel Orientation="Vertical">
-                                                <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged}"
+                                                <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged, StringFormat=Организация: {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            FontWeight="Bold"
                                                            FontSize="16"

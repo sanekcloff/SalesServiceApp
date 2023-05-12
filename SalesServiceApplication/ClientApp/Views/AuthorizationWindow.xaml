@@ -32,6 +32,7 @@
                                    HorizontalAlignment="Center"
                                    Style="{StaticResource TextBlock1}"/>
             <TextBox Width="170"
+                     MaxLength="20"
                                  Style="{StaticResource TextBoxStyle2}"
                                  Margin="0,0,0,10"
                                  Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
@@ -39,6 +40,7 @@
                                    HorizontalAlignment="Center"
                                    Style="{StaticResource TextBlock1}"/>
             <TextBox Width="170"
+                     MaxLength="20"
                                  Style="{StaticResource TextBoxStyle2}"
                                  Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Content="Войти"

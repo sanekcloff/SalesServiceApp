@@ -47,43 +47,28 @@ namespace ClientApp.ViewModels
         private bool PasswordAlredyInUse() => _clientService.GetClients().Any(c=>c.Password==Password);
         private bool LoginAlredyInUse() => _clientService.GetClients().Any(c => c.Login == Login);
         private bool EnailAlredyInUse() => _clientService.GetClients().Any(c => c.Email == Email);
-        private bool PhoneAlredyInUse() => _clientService.GetClients().Any(c => c.Login == Login);
-        private bool PropertiesIsNull() => (string.IsNullOrEmpty(LastName) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(MiddleName) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password)) ? true : false;
+        private bool PhoneAlredyInUse() => _clientService.GetClients().Any(c => c.Phone == Phone);
+        private bool PropertiesIsNull() => (string.IsNullOrEmpty(LastName) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(MiddleName) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Organization));
         private void Registration()
         {
-            if (!PropertiesIsNull())
-            {
-                if (!ClientIsExist())
-                {
-                    if (!EnailAlredyInUse())
-                    {
-                        if (!PhoneAlredyInUse())
-                        {
-                            if (!PasswordAlredyInUse())
-                            {
-                                if (!LoginAlredyInUse())
-                                {
-                                    _clientService.Insert(new Client { Login = Login, Password = Password, FirstName = FirstName, LastName = LastName, MiddleName = MiddleName, Email = Email, Organization = Organization, Phone = Phone });
-                                    MessageBox.Show("Учётная запись зарегистрирована!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                                    OpenAuthorizationWindow();
-                                }
-                                else
-                                    MessageBox.Show("Используйте другой логин!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                            }
-                            else
-                                MessageBox.Show("Используйте другой пароль!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                        }
-                        else
-                            MessageBox.Show("Используйте другой телефон!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                    else
-                        MessageBox.Show("Используйте другой Email!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                    MessageBox.Show("Используйте другой логин и пароль!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            if (PropertiesIsNull())
+                MessageBox.Show("Все поля должны быть заполнены!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (ClientIsExist())
+                MessageBox.Show("Используйте другой логин и пароль!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (EnailAlredyInUse())
+                MessageBox.Show("Используйте другой Email!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (PhoneAlredyInUse())
+                MessageBox.Show("Используйте другой телефон!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (PasswordAlredyInUse())
+                MessageBox.Show("Используйте другой пароль!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (LoginAlredyInUse())
+                MessageBox.Show("Используйте другой логин!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             else
-                MessageBox.Show("Все поля отмеченые * должны быть заполнены!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            {
+                _clientService.Insert(new Client { Login = Login, Password = Password, FirstName = FirstName, LastName = LastName, MiddleName = MiddleName, Email = Email, Organization = Organization, Phone = Phone });
+                MessageBox.Show("Учётная запись зарегистрирована!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                OpenAuthorizationWindow();
+            }               
         }
         private void OpenAuthorizationWindow()
         {

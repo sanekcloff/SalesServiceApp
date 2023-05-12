@@ -102,13 +102,13 @@ INSERT INTO [dbo].[Services]
 GO
 
 INSERT INTO [dbo].[Clients]
-           ([LastName],[FirstName],[MiddleName],[Email],[Phone],[Login],[Password])
+           ([LastName],[FirstName],[MiddleName],[Email],[Phone],[Login],[Password],[Organization])
      VALUES
-           ('Аксёнов','Александр','Игоревич','email@nail.ru','87645738671','client1','client1'),
-		   ('Комарова','Мия','Александровна','yaunoilauyaula-9754@mail.ru','89547272510','client2','client2'),
-		   ('Иванова','Екатерина','Дмитриевна','seifewautrede-8097@mail.ru','89388179826','client3','client3'),
-		   ('Рябинина','Екатерина','Ильинична','bripricequaubro-9315@mail.ru','89354168412','client4','client4'),
-		   ('Меркулова','Дарья','Константиновна','xiveyettoiba-9717@mail.ru','89125017985','client5','client5')
+           ('Аксёнов','Александр','Игоревич','email@nail.ru','87645738671','client1','client1','ВТИТБиД'),
+		   ('Комарова','Мия','Александровна','yaunoilauyaula-9754@mail.ru','89547272510','client2','client2','Волгодонская АЭС-сервис'),
+		   ('Иванова','Екатерина','Дмитриевна','seifewautrede-8097@mail.ru','89388179826','client3','client3','Управление здравоохранения г. Волгодонск'),
+		   ('Рябинина','Екатерина','Ильинична','bripricequaubro-9315@mail.ru','89354168412','client4','client4','Детская школа искусств'),
+		   ('Меркулова','Дарья','Константиновна','xiveyettoiba-9717@mail.ru','89125017985','client5','client5','Лагутинский сельский дом культуры')
 GO
 
 INSERT INTO [dbo].[Departments]

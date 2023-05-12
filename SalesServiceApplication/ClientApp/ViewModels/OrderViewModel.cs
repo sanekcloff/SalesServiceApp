@@ -157,9 +157,11 @@ namespace ClientApp.ViewModels
             else
                 return serviceOrders;
         }
+        private bool SelectedProdcutOrderIsNull() => SelectedProductOrder == null;
+        private bool SelectedServiceOrderIsNull() => SelectedServiceOrder == null;
         private void CancelProductOrder()
         {
-            if (SelectedProductOrder != null)
+            if (!SelectedProdcutOrderIsNull())
             {
                 var result = MessageBox.Show($"Вы уверены что хотите отменить заказ товара \"{SelectedProductOrder.Product.Title}\"?","Внимание",MessageBoxButton.YesNo,MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
@@ -174,7 +176,7 @@ namespace ClientApp.ViewModels
         }
         private void CancelServiceOrder()
         {
-            if (SelectedServiceOrder != null)
+            if (!SelectedServiceOrderIsNull())
             {
                 var result = MessageBox.Show($"Вы уверены что хотите отменить заказ услуги \"{SelectedServiceOrder.Service.Title}\"?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)

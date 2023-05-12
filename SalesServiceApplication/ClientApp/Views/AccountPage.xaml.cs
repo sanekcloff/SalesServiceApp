@@ -1,5 +1,4 @@
-﻿using AppData.DataBaseData;
-using AppData.Entities;
+﻿using AppData.Entities;
 using AppData.Services;
 using ClientApp.ViewModels;
 using System;
@@ -14,20 +13,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClientApp.Views
 {
     /// <summary>
-    /// Логика взаимодействия для ClientWindow.xaml
+    /// Логика взаимодействия для AccountPage.xaml
     /// </summary>
-    public partial class ClientWindow : Window
+    public partial class AccountPage : UserControl
     {
-        public ClientWindow(ApplicationDbContext ctx, Client client, ClientService clientService)
+        public AccountPage(Client client, ClientService clientService)
         {
             InitializeComponent();
-            DataContext = new ClientViewModel(ctx, client, ClientPage, clientService);
-            Title = $"Учётная запись: {client.FullName}";
+            DataContext = new AccountViewModel(client, clientService);
         }
     }
 }

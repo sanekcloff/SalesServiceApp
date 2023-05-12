@@ -38,6 +38,9 @@
     <None Remove="Resources\Styles\Pictures\Button\AboutUs.png" />
     <None Remove="Resources\Styles\Pictures\Button\AboutUs_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\AboutUs_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Account.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Account_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Account_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Button\Add.png" />
     <None Remove="Resources\Styles\Pictures\Button\AddOrder.png" />
     <None Remove="Resources\Styles\Pictures\Button\AddOrder_Active.png" />
@@ -190,6 +193,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\AboutUs_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Account.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Account_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Account_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\Add.png">

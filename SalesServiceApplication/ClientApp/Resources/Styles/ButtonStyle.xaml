@@ -121,6 +121,16 @@
                 ImageSource="\Resources\Styles\Pictures\Button\Reviews_Pressed.png"
                 Stretch="Uniform"/>
 
+    <ImageBrush x:Key="Account"
+                ImageSource="\Resources\Styles\Pictures\Button\Account.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Account_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Account_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Account_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Account_Pressed.png"
+                Stretch="Uniform"/>
+
     <ImageBrush x:Key="AddOrder"
                 ImageSource="\Resources\Styles\Pictures\Button\AddOrder.png"
                 Stretch="Uniform"/>
@@ -452,6 +462,27 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Reviews_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AccountButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Account}"
+                            Height="30"
+                            Width="30"
+                            Margin="5"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Account_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Account_Pressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

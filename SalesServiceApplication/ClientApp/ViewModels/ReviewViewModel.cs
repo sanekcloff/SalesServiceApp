@@ -110,9 +110,10 @@ namespace ClientApp.ViewModels
             new ReviewManagerWindow(_client, _reviewService).ShowDialog();
             UpdateLists();
         }
+        private bool SelectedReviewIsNull() => SelectedReview == null;
         private void DeleteQuestion()
         {
-            if (SelectedReview != null)
+            if (!SelectedReviewIsNull())
             {
                 var result = MessageBox.Show($"Удалить отзыв?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)

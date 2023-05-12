@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:ClientApp.Views"
         mc:Ignorable="d"
         x:Name="ClientWind"
-        Title="Окно клиента" MinHeight="450" MinWidth="800"
+        WindowStartupLocation="CenterScreen"
+        Title="Окно клиента" MinHeight="550" MinWidth="900"
+        Width="900"
+        Height="550"
         Background="{StaticResource BackgroundLight}"
         Icon="{StaticResource Icon}">
     <Grid>
@@ -43,6 +46,10 @@
                     Content="О нас"
                     Command="{Binding AboutUsPageButton}"
                     Style="{StaticResource AboutUsButton}"/>
+            <Button Height="50"
+                    Content="Учётная запись"
+                    Command="{Binding AccountPageButton}"
+                    Style="{StaticResource AccountButton}"/>
             <Button Height="50"
                     Content="Выйти из учётки"
                     Command="{Binding LogOutButton}"
