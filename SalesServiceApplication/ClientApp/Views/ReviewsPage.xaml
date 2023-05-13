@@ -7,104 +7,144 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="740"
              FontFamily="Cascadia Code">
+    
     <TabControl>
+        
         <TabItem Header="Отзывы">
+            
             <Grid>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
+                
                 <Grid Grid.Row="0">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Style="{StaticResource TextBoxStyle2}"
-                                 Width="250"
+                        
+                        <TextBox Width="250"
                                  Margin="20,0,0,0"
+                                 Tag="Введите текст для поиска отзывов"
+                                 Style="{StaticResource SearchTextBox}"
                                  Text="{Binding SearchReviewValue, UpdateSourceTrigger=PropertyChanged}"/>
+                        
                     </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal"
                                 Grid.Column="1"
                                 HorizontalAlignment="Right">
+                        
                         <ComboBox Margin="0,0,20,0"
                                   Width="150"
-                                  Style="{StaticResource ComboBox1}"
                                   ItemsSource="{Binding ReviewSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedReviewSort, UpdateSourceTrigger=PropertyChanged}"/>
+                        
                     </StackPanel>
+                    
                 </Grid>
+                
                 <ListView Grid.Row="1"
-                Style="{StaticResource ReviewsListView}"
-                ItemsSource="{Binding Reviews, UpdateSourceTrigger=PropertyChanged}"
-                SelectedItem="{Binding SelectedReview, UpdateSourceTrigger=PropertyChanged}"/>
+                          Style="{StaticResource ReviewsListView}"
+                          ItemsSource="{Binding Reviews, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedReview, UpdateSourceTrigger=PropertyChanged}"/>
+                
                 <Grid Grid.Row="2">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
                                Text="{Binding ReviewCount, UpdateSourceTrigger=PropertyChanged}"
                                Style="{StaticResource TextBlock1}"
                                VerticalAlignment="Center"/>
+                    
                 </Grid>
+                
             </Grid>
+            
         </TabItem>
+        
         <TabItem Header="Мои отзывы">
+            
             <Grid>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
+                
                 <Grid Grid.Row="0">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Style="{StaticResource TextBoxStyle2}"
-                                 Width="250"
+                        
+                        <TextBox Width="250"
                                  Margin="20,0,0,0"
+                                 Tag="Введите текст для поиска отзывов"
+                                 Style="{StaticResource SearchTextBox}"
                                  Text="{Binding SearchClientReviewValue, UpdateSourceTrigger=PropertyChanged}"/>
+                        
                     </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal"
                                 Grid.Column="1"
                                 HorizontalAlignment="Right">
+                        
                         <ComboBox Margin="0,0,20,0"
                                   Width="150"
-                                  Style="{StaticResource ComboBox1}"
                                   ItemsSource="{Binding ReviewSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedClientReviewSort, UpdateSourceTrigger=PropertyChanged}"/>
+                        
                     </StackPanel>
+                    
                 </Grid>
+                
                 <ListView Grid.Row="1"
-                Style="{StaticResource ReviewsListView}"
-                ItemsSource="{Binding ClientReviews, UpdateSourceTrigger=PropertyChanged}"
-                SelectedItem="{Binding SelectedReview, UpdateSourceTrigger=PropertyChanged}"/>
+                          Style="{StaticResource ReviewsListView}"
+                          ItemsSource="{Binding ClientReviews, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedReview, UpdateSourceTrigger=PropertyChanged}"/>
+                
                 <Grid Grid.Row="2">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <StackPanel Orientation="Horizontal"
                                 Margin="5,0">
+                        
                         <Button Style="{StaticResource AddButton}"
                             Command="{Binding OpenAddManagerWindow}"
                             HorizontalAlignment="Left"
                             Margin="2,0"
                             VerticalAlignment="Center"/>
+                        
                         <Button Style="{StaticResource DeleteButton}"
                             Command="{Binding DeleteReviewButton}"
                             HorizontalAlignment="Left"
                             Margin="2,0"
                             VerticalAlignment="Center"/>
+                        
                     </StackPanel>
+                    
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
                                Text="{Binding ClientReviewCount, UpdateSourceTrigger=PropertyChanged}"

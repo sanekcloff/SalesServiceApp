@@ -7,55 +7,71 @@
         mc:Ignorable="d"
         x:Name="ClientWind"
         WindowStartupLocation="CenterScreen"
-        Title="Окно клиента" MinHeight="550" MinWidth="900"
+        Title="Окно клиента" MinHeight="550" MinWidth="1000"
         Width="900"
         Height="550"
         Background="{StaticResource BackgroundLight}"
         Icon="{StaticResource Icon}">
+    
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
         <StackPanel Background="{StaticResource BackgroundVeryDark}">
+            
             <Button Height="50"
                     Content="Новости"
                     Command="{Binding NewsPageButton}"
                     Style="{StaticResource NewsButton}"/>
+            
             <Button Height="50"
                     Content="Главное"
                     Command="{Binding MainPageButton}"
                     Style="{StaticResource ProductsButton}"/>
+            
             <Button Height="50"
                     Content="Заказы"
                     Command="{Binding OrdersPageButton}"
                     Style="{StaticResource OrdersButton}"/>
+            
             <Button Height="50"
                     Content="История"
                     Command="{Binding HistoryPageButton}"
                     Style="{StaticResource HistoryButton}"/>
+            
             <Button Height="50"
                     Content="Вопросы"
                     Command="{Binding QuestionsPageButton}"
                     Style="{StaticResource QuestionsButton}"/>
+            
             <Button Height="50"
                     Content="Отзывы"
                     Command="{Binding ReviewsPageButton}"
                     Style="{StaticResource ReviewsButton}"/>
+            
             <Button Height="50"
                     Content="О нас"
                     Command="{Binding AboutUsPageButton}"
                     Style="{StaticResource AboutUsButton}"/>
+            
             <Button Height="50"
                     Content="Учётная запись"
                     Command="{Binding AccountPageButton}"
                     Style="{StaticResource AccountButton}"/>
+            
             <Button Height="50"
                     Content="Выйти из учётки"
                     Command="{Binding LogOutButton}"
                     Style="{StaticResource LogOutButton}"/>
+            
         </StackPanel>
+        
         <UserControl x:Name="ClientPage"
                      Grid.Column="1"/>
+        
     </Grid>
+    
 </Window>

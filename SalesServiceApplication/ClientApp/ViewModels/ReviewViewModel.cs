@@ -62,8 +62,22 @@ namespace ClientApp.ViewModels
         public List<string> ReviewSorts { get; set; }
         public string ReviewCount { get => _reviewCount; set => Set(ref _reviewCount, value, nameof(ReviewCount)); }
         public List<Review> ClientReviews { get => _clientReviews; set => Set(ref _clientReviews, value, nameof(ClientReviews)); }
-        public string SearchClientReviewValue { get => _searchClientReviewValue; set => Set(ref _searchClientReviewValue, value, nameof(SearchClientReviewValue)); }
-        public string SelectedClientReviewSort { get => _selectedClientReviewSort; set => Set(ref _selectedClientReviewSort, value, nameof(SelectedClientReviewSort)); }
+        public string SearchClientReviewValue
+        {
+            get => _searchClientReviewValue; set
+            {
+                if (Set(ref _searchClientReviewValue, value, nameof(SearchClientReviewValue)))
+                    UpdateLists();
+            }
+        }
+        public string SelectedClientReviewSort
+        {
+            get => _selectedClientReviewSort; set
+            {
+                if (Set(ref _selectedClientReviewSort, value, nameof(SelectedClientReviewSort)))
+                    UpdateLists();
+            }
+        }
         public string ClientReviewCount { get => _clientReviewCount; set => Set(ref _clientReviewCount, value, nameof(ClientReviewCount)); }
         #endregion
         #region Methods

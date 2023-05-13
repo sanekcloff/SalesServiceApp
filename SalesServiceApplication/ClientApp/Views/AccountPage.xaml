@@ -6,102 +6,99 @@
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="740">
+    
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        
         <Image Source="\Resources\Logos\Logo.png"
                            Height="250"
                            Width="250"
                            Stretch="Uniform"
                            Grid.RowSpan="3"
                            Opacity="0.4"/>
+        
         <Grid Grid.Row="1">
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <StackPanel Grid.Column="1"
                                     VerticalAlignment="Center"
                                     Margin="10,0">
-                <TextBlock Text="Фамилия"
-                                       Style="{StaticResource TextBlock1}"/>
+                
                 <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     Margin="0,0,0,5"
-                                     HorizontalContentAlignment="Left"
-                         MaxLength="20"/>
-                <TextBlock Text="Имя"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     Margin="0,0,0,5"
-                                     HorizontalContentAlignment="Left"
-                         MaxLength="20"/>
-                <TextBlock Text="Отчество"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     Margin="0,0,0,5"
-                                     HorizontalContentAlignment="Left"
-                         MaxLength="20"/>
-                <TextBlock Text="Логин"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     HorizontalContentAlignment="Left"
-                         MaxLength="20"/>
-            </StackPanel>
-            <StackPanel Grid.Column="2"
-                                    VerticalAlignment="Center"
-                                    Margin="10,0">
-                <TextBlock Text="Email"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     Margin="0,0,0,5"
-                                     HorizontalContentAlignment="Left"
-                         MaxLength="100"/>
-                <TextBlock Text="Телефон"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource TextBoxStyle2}"
                          Margin="0,0,0,5"
                          HorizontalContentAlignment="Left"
-                         MaxLength="11">
-                </TextBox>
-                <TextBlock Text="Организация"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding Organization, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     Margin="0,0,0,5"
-                                     HorizontalContentAlignment="Left"
-                         MaxLength="100"/>
-                <TextBlock Text="Пароль"
-                                       Style="{StaticResource TextBlock1}"/>
-                <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource TextBoxStyle2}"
-                                     HorizontalContentAlignment="Left"
                          MaxLength="20"/>
+                
+                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,5"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="20"/>
+                
+                <TextBox Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,5"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="20"/>
+                
+                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="20"/>
+                
             </StackPanel>
+
+            <StackPanel Grid.Column="2"
+                        VerticalAlignment="Center"
+                        Margin="10,0">
+
+                <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,5"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="100"/>
+
+                <TextBox Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,5"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="11"/>
+                
+                <TextBox Text="{Binding Organization, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,5"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="100"/>
+                
+                <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                         HorizontalContentAlignment="Left"
+                         MaxLength="20"/>
+                
+            </StackPanel>
+            
             <Button Content="Обновить данные"
-                                Grid.ColumnSpan="2"
-                                Grid.Column="1"
-                                Style="{StaticResource ButtonStyle1}"
-                                Width="140"
-                                Margin="0,200,0,0"
-                                Command="{Binding UpdateAccountButton}"/>
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    Style="{StaticResource ButtonStyle1}"
+                    Width="140"
+                    Margin="0,200,0,0"
+                    Command="{Binding UpdateAccountButton}"/>
+            
             <Button Content="Очистить изменения"
-                                Grid.ColumnSpan="2"
-                                Grid.Column="1"
-                                Style="{StaticResource ButtonStyle2}"
-                                Width="140"
-                                Margin="0,250,0,0"
-                                Command="{Binding RefreshFieldsButton}"/>
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    Style="{StaticResource ButtonStyle2}"
+                    Width="140"
+                    Margin="0,250,0,0"
+                    Command="{Binding RefreshFieldsButton}"/>
+            
         </Grid>
+        
     </Grid>
+    
 </UserControl>

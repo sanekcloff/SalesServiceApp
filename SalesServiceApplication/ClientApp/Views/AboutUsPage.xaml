@@ -6,16 +6,20 @@
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="740">
+    
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height=".4*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,10,0,10"
@@ -31,6 +35,7 @@
                            FontSize="50"/>
                 </StackPanel>
             </StackPanel>
+            
             <StackPanel Grid.Column="1"
                         Margin="10">
                 <TextBlock Text="ООО «Бизнес решения» –  официальный партнер фирмы «1С» со статусом 1С:Франчайзи уже более 13 лет. Мы надежная и стабильная компания."
@@ -44,44 +49,56 @@
                 <TextBlock Text="Email: info@it-vdonsk.ru"
                            Style="{StaticResource TextBlock1}"/>
             </StackPanel>
+            
         </Grid>
+        
         <Border Grid.Row="1"
                 Background="{StaticResource BackgroundDark}"
                 CornerRadius="20"
                 Margin="20">
+            
             <StackPanel Margin="15">
+                
                 <TextBlock Text="Продаём программы 1С, настраиваем учет, автоматизируем бизнес. Только полезные программы, услуги и сервисы для вашего предприятия. Доработка программ, улучшение под ваши задачи, интеграции с различными системами, в том числе Битрикс24 и телеграмм."
                            TextWrapping="Wrap"
                            Style="{StaticResource TextBlock1}"
                            Margin="0,0,0,5"/>
+                
                 <TextBlock Text="Почему выбирают нас:"
                            TextWrapping="Wrap"
                            FontWeight="Bold"
                            Style="{StaticResource TextBlock1}"/>
+                
                 <TextBlock Text="Компетентность, Поддержка и Забота — это то, за что нас ценят клиенты, работая с нами долгие годы. Качественные доработки программ, интеграции и разработки."
                            TextWrapping="Wrap"
                            Style="{StaticResource TextBlock1}"
                            Margin="0,0,0,5"/>
+                
                 <TextBlock Text="Программы и лицензии 1С:"
                            TextWrapping="Wrap"
                            FontWeight="Bold"
                            Style="{StaticResource TextBlock1}"/>
+                
                 <TextBlock Text="Подбираем программы именно под Ваш вид деятельности, готовы разработать и продемонстрировать модель ведения учета на Ваших данных на типовых программах 1С."
                            TextWrapping="Wrap"
                            Style="{StaticResource TextBlock1}"
                            Margin="0,0,0,5"/>
+                
                 <TextBlock Text="Обслуживания 1С, разработка, доработка:"
                            TextWrapping="Wrap"
                            FontWeight="Bold"
                            Style="{StaticResource TextBlock1}"/>
+                
                 <TextBlock Text="Справляемся с задачей разной сложности: делаем интеграции, внедряем типовые и отраслевые решения, учим и тестируем, находим ошибки в программах и учете и помогаем их исправить. Можем доработать Вашу программу или написать с нуля на платформе 1С."
                            TextWrapping="Wrap"
                            Style="{StaticResource TextBlock1}"
                            Margin="0,0,0,5"/>
+                
                 <TextBlock Text="Полезные сервисы и улучшайзеры для 1С:"
                            TextWrapping="Wrap"
                            FontWeight="Bold"
                            Style="{StaticResource TextBlock1}"/>
+                
                 <TextBlock Text="Различные решения, которые помогут сохранить ваше время для более полезных дел, сделают работу боле быстрой и удобной."
                            TextWrapping="Wrap"
                            Style="{StaticResource TextBlock1}"/>
@@ -89,5 +106,7 @@
             </StackPanel>
             
         </Border>
+        
     </Grid>
+    
 </UserControl>

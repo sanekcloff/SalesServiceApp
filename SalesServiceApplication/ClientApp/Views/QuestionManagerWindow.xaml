@@ -10,37 +10,35 @@
         Background="{StaticResource BackgroundLight}"
         ResizeMode="NoResize"
         Icon="{StaticResource QuestionsIcon}">
+    
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
         <StackPanel Margin="5">
-            <TextBlock Text="Тема"
-                       Style="{StaticResource TextBlock1}"/>
-            <TextBox Text="{Binding Topic, UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource TextBoxStyle2}"
-                     HorizontalContentAlignment="Left"
-                     VerticalContentAlignment="Center"
-                     Padding="2,0"/>
+
+            <TextBox Text="{Binding Topic, UpdateSourceTrigger=PropertyChanged}"/>
+            
         </StackPanel>
+
         <StackPanel Margin="5"
                     Grid.Row="1">
-            <TextBlock Text="Содержание вопроса"
-                       Style="{StaticResource TextBlock1}"/>
+
             <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource TextBoxStyle3}"
-                     Height="100"
-                     TextWrapping="Wrap"
-                     HorizontalContentAlignment="Left"
-                     VerticalContentAlignment="Top"
-                     Padding="2"/>
+                     Height="100"/>
+            
             <Button Style="{StaticResource ButtonStyle1}"
                     Margin="0,8,0,0"
                     Width="100"
                     x:Name="ActionButton"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"/>
+            
         </StackPanel>
+        
     </Grid>
+    
 </Window>

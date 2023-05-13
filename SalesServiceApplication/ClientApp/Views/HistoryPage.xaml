@@ -6,103 +6,144 @@
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="740">
+    
     <TabControl>
+        
         <TabItem Header="Программные продукты">
+            
             <Grid>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
+                
                 <Grid Grid.Row="0">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Style="{StaticResource TextBoxStyle2}"
-                                 Width="250"
+                        
+                        <TextBox Width="250"
                                  Margin="20,0,0,0"
+                                 Tag="Введите текст для поиска программного продукта"
+                                 Style="{StaticResource SearchTextBox}"
                                  Text="{Binding SearchProductValue, UpdateSourceTrigger=PropertyChanged}"/>
+                        
                     </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal"
                                 Grid.Column="1"
                                 HorizontalAlignment="Right">
+                        
                         <ComboBox Margin="0,0,10,0"
                                   Width="150"
-                                  Style="{StaticResource ComboBox1}"
                                   ItemsSource="{Binding ProductSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedProductSort, UpdateSourceTrigger=PropertyChanged}"/>
+                        
                         <ComboBox Margin="0,0,20,0"
                                   Width="150"
-                                  Style="{StaticResource ComboBox1}"
                                   ItemsSource="{Binding ProductFilthers, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedProductFilther, UpdateSourceTrigger=PropertyChanged}"/>
+                    
                     </StackPanel>
+                    
                 </Grid>
+                
                 <ListView Grid.Row="1"
                         Style="{StaticResource ProductHistoryListView}"
                         ItemsSource="{Binding ProductOrders, UpdateSourceTrigger=PropertyChanged}"
                         SelectedItem="{Binding SelectedProductOrder, UpdateSourceTrigger=PropertyChanged}"/>
+                
                 <Grid Grid.Row="2">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
                                Text="{Binding ProductsCount, UpdateSourceTrigger=PropertyChanged}"
                                Style="{StaticResource TextBlock1}"
                                VerticalAlignment="Center"/>
+                    
                 </Grid>
+                
             </Grid>
+            
         </TabItem>
+        
         <TabItem Header="Услуги">
+            
             <Grid>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
+                
                 <Grid Grid.Row="0">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Style="{StaticResource TextBoxStyle2}"
-                                 Width="250"
+                        
+                        <TextBox Width="250"
                                  Margin="20,0,0,0"
+                                 Tag="Введите текст для поиска услуги"
+                                 Style="{StaticResource SearchTextBox}"
                                  Text="{Binding SearchServiceValue, UpdateSourceTrigger=PropertyChanged}"/>
+                    
                     </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal"
                                 Grid.Column="1"
                                 HorizontalAlignment="Right">
+                        
                         <ComboBox Margin="0,0,20,0"
                                   Width="150"
-                                  Style="{StaticResource ComboBox1}"
                                   ItemsSource="{Binding ServiceSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedServiceSort, UpdateSourceTrigger=PropertyChanged}"/>
+                    
                     </StackPanel>
+                    
                 </Grid>
+                
                 <ListView Grid.Row="1"
                         Style="{StaticResource ServiceHistoryListView}"
                         ItemsSource="{Binding ServiceOrders, UpdateSourceTrigger=PropertyChanged}"
                         SelectedItem="{Binding SelectedServiceOrder, UpdateSourceTrigger=PropertyChanged}"/>
+               
                 <Grid Grid.Row="2">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
                                Text="{Binding ServicesCount, UpdateSourceTrigger=PropertyChanged}"
                                Style="{StaticResource TextBlock1}"
                                VerticalAlignment="Center"/>
+                    
                 </Grid>
+                
             </Grid>
+            
         </TabItem>
+        
     </TabControl>
+    
 </UserControl>

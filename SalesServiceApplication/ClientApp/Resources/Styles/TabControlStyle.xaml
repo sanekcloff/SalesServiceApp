@@ -26,14 +26,10 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="Opacity" Value="1"/>
-                <Setter Property="FontSize" Value="14"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="Opacity" Value="1"/>
-                <Setter Property="FontSize" Value="14"/>
             </Trigger>
         </Style.Triggers>
     </Style>

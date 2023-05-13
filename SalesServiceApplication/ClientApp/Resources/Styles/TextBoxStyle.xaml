@@ -1,68 +1,80 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="TextBoxStyle1" TargetType="TextBox">
-        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground1}"/>
-        <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="FontFamily" Value="Cascadia Code"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border"
-                            CornerRadius="8"
-                            Height="20"
-                            Background="{StaticResource TextBoxBackground1}">
-                        <ScrollViewer x:Name="PART_ContentHost"
-                                      Focusable="false"
-                                      HorizontalScrollBarVisibility="Hidden"
-                                      VerticalScrollBarVisibility="Hidden"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="TextBoxStyle2" TargetType="TextBox">
+    
+    <!--#region SearchTextBox-->
+
+    <ImageBrush x:Key="Search"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Search.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Search_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Search_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Search_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Search_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="SearchTextBox" TargetType="TextBox">
         <Setter Property="Foreground" Value="{StaticResource TextBoxForeground2}"/>
         <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border"
+                    <Border x:Name="MainBorder"
                             CornerRadius="8"
-                            Height="20"
                             Background="{StaticResource TextBoxBackground2}">
-                        <ScrollViewer x:Name="PART_ContentHost"
-                                      Focusable="false"
-                                      HorizontalScrollBarVisibility="Hidden"
-                                      VerticalScrollBarVisibility="Hidden"/>
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Search}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Поиск"
+                                   Foreground="{StaticResource Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Search_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Search_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="TextBoxStyle3" TargetType="TextBox">
-        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground2}"/>
-        <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="FontFamily" Value="Cascadia Code"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border"
-                            CornerRadius="8"
-                            Background="{StaticResource TextBoxBackground2}">
-                        <ScrollViewer x:Name="PART_ContentHost"
-                                      Focusable="false"
-                                      HorizontalScrollBarVisibility="Hidden"
-                                      VerticalScrollBarVisibility="Hidden"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    
+    <!--#endregion-->
+    
 </ResourceDictionary>

@@ -6,35 +6,47 @@
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="740">
+    
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0">
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <StackPanel Orientation="Horizontal">
-                <TextBox Style="{StaticResource TextBoxStyle2}"
-                                 Width="250"
-                                 Margin="20,0,0,0"
-                                 Text="{Binding SearchNewsValue, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <TextBox Width="250"
+                         Margin="20,0,0,0"
+                         Tag="Введите текст для поиска новостей"
+                         Style="{StaticResource SearchTextBox}"
+                         Text="{Binding SearchNewsValue, UpdateSourceTrigger=PropertyChanged}"/>
+                
             </StackPanel>
+            
             <StackPanel Orientation="Horizontal"
-                                Grid.Column="1"
-                                HorizontalAlignment="Right">
+                        Grid.Column="1"
+                        HorizontalAlignment="Right">
+                
                 <ComboBox Margin="0,0,20,0"
-                                  Width="150"
-                                  Style="{StaticResource ComboBox1}"
-                                  ItemsSource="{Binding NewsSorts, UpdateSourceTrigger=PropertyChanged}"
-                                  SelectedItem="{Binding SelectedSortValue, UpdateSourceTrigger=PropertyChanged}"/>
+                          Width="150"
+                          ItemsSource="{Binding NewsSorts, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedSortValue, UpdateSourceTrigger=PropertyChanged}"/>
+            
             </StackPanel>
+            
         </Grid>
+        
         <ListView Grid.Row="1"
-                Style="{StaticResource NewsListView}"
-                ItemsSource="{Binding News, UpdateSourceTrigger=PropertyChanged}"/>
+                  Style="{StaticResource NewsListView}"
+                  ItemsSource="{Binding News, UpdateSourceTrigger=PropertyChanged}"/>
         
     </Grid>
 </UserControl>

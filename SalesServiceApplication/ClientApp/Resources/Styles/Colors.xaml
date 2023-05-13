@@ -23,5 +23,6 @@
     <SolidColorBrush x:Key="TextBoxBackground2" Color="White"/>
     <SolidColorBrush x:Key="TextBoxForeground1" Color="White"/>
     <SolidColorBrush x:Key="TextBoxForeground2" Color="Black"/>
+    <SolidColorBrush x:Key="Watermark" Color="#FF969696"/>
     <!--#endregion-->
 </ResourceDictionary>

@@ -79,6 +79,9 @@
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Star.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Search.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Search_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Search_Focused.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Active.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Pressed.png" />
@@ -91,6 +94,18 @@
     <None Remove="Resources\Styles\Pictures\Window\Normal.png" />
     <None Remove="Resources\Styles\Pictures\Window\Normal_Active.png" />
     <None Remove="Resources\Styles\Pictures\Window\Normal_Pressed.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Search_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Search_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
