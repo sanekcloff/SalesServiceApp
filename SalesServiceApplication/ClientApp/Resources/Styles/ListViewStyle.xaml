@@ -14,7 +14,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -26,7 +26,7 @@
                                             <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
                                                Height="100"
@@ -68,23 +68,25 @@
                                             <TextBlock x:Name="TextBlock1"
                                                        Text="{Binding Cost, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
                                                        TextDecorations="Strikethrough"
-                                                       Visibility="Collapsed"/>
+                                                       Visibility="Collapsed"
+                                                       Style="{StaticResource TextBlock2}"/>
                                             <TextBlock x:Name="TextBlock2"
                                                        Text="{Binding CorrectDiscount,StringFormat=Скидка: {0}%}"
-                                                       Visibility="Collapsed"/>
+                                                       Visibility="Collapsed"
+                                                       Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
-                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                     <DataTrigger Binding="{Binding IsDiscount}" Value="true">
                                         <Setter TargetName="TextBlock1" Property="Visibility" Value="Visible"/>
@@ -115,7 +117,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -127,7 +129,7 @@
                                             <ColumnDefinition Width="105"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
                                                Height="100"
@@ -173,18 +175,18 @@
                                                        x:Name="TextBlock2"
                                                        Visibility="Collapsed"/>
                                         </StackPanel>
-                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                     <DataTrigger Binding="{Binding IsNegotiable}" Value="true">
                                         <Setter TargetName="TextBlock1" Property="Visibility" Value="Collapsed"/>
@@ -215,7 +217,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -227,7 +229,7 @@
                                             <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Product.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
                                                Height="100"
@@ -259,18 +261,18 @@
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
-                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -294,7 +296,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -306,7 +308,7 @@
                                             <ColumnDefinition Width="105"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Service.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
                                                Height="100"
@@ -344,18 +346,18 @@
                                                        x:Name="TextBlock2"
                                                        Visibility="Collapsed"/>
                                         </StackPanel>
-                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                     <DataTrigger Binding="{Binding Service.IsNegotiable}" Value="true">
                                         <Setter TargetName="TextBlock1" Property="Visibility" Value="Collapsed"/>
@@ -383,7 +385,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -395,7 +397,7 @@
                                             <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Product.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
                                                Height="100"
@@ -433,18 +435,18 @@
                                                        FontSize="14"
                                                        Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
-                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -468,7 +470,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -480,7 +482,7 @@
                                             <ColumnDefinition Width="105"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Service.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
                                                Height="100"
@@ -519,18 +521,18 @@
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock1"/>
                                         </StackPanel>
-                                        <Border Grid.Column="4" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -554,7 +556,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -564,7 +566,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <StackPanel Grid.Column="1"
                                                     Margin="5">
@@ -582,18 +584,18 @@
                                                        Style="{StaticResource TextBlock2}"
                                                        TextWrapping="Wrap"/>
                                         </StackPanel>
-                                        <Border Grid.Column="2" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="2" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -616,7 +618,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -626,7 +628,7 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <StackPanel Grid.Column="1"
                                                     Margin="5">
@@ -662,18 +664,18 @@
                                                        TextWrapping="Wrap"/>
                                             </StackPanel>
                                         </StackPanel>
-                                        <Border Grid.Column="2" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="2" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                     <DataTrigger Binding="{Binding IsAnswered}" Value="true">
                                         <Setter TargetName="AnswerTextBlock" Property="Visibility" Value="Visible"/>
@@ -702,7 +704,7 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
                                 <Border Margin="10"
-                                        Background="{StaticResource BackgroundWhite}"
+                                        Background="{StaticResource scb_White}"
                                         BorderBrush="Transparent"
                                         BorderThickness="0"
                                         CornerRadius="10">
@@ -713,7 +715,7 @@
                                             <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0" Background="{StaticResource ButtonColor}" CornerRadius="10,0,0,10"
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <StackPanel Grid.Column="1"
                                                     Margin="5">
@@ -747,18 +749,18 @@
                                                    Height="30"
                                                    Stretch="Uniform"/>
                                         </StackPanel>
-                                        <Border Grid.Column="3" Background="{StaticResource ButtonColor}" CornerRadius="0,10,10,0"
+                                        <Border Grid.Column="3" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
                                     </Grid>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
-                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
                                     <DataTrigger Binding="{Binding Client.IsOrganization}" Value="true">
                                         <Setter TargetName="OganizationTextBlock" Property="Visibility" Value="Visible"/>

@@ -2,15 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="TextBlock1" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Cascadia Code"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor1}"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_White}"/>
     </Style>
     <Style x:Key="TextBlock2" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Cascadia Code"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor2}"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
     </Style>
     <Style x:Key="TextBlock3" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Cascadia Code"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundColor3}"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_Red}"/>
     </Style>
     
 </ResourceDictionary>

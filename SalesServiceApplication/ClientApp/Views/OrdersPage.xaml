@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="740">
+             d:DesignHeight="600" d:DesignWidth="940">
     
     <TabControl>
         
@@ -42,11 +42,13 @@
                         
                         <ComboBox Margin="0,0,10,0"
                                   Width="150"
+                                  Tag="Сортировка"
                                   ItemsSource="{Binding ProductSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedProductSort, UpdateSourceTrigger=PropertyChanged}"/>
                         
                         <ComboBox Margin="0,0,20,0"
-                                  Width="150"
+                                  Width="270"
+                                  Tag="Фильтрация"
                                   ItemsSource="{Binding ProductFilthers, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedProductFilther, UpdateSourceTrigger=PropertyChanged}"/>
                     
@@ -118,6 +120,7 @@
                         
                         <ComboBox Margin="0,0,20,0"
                                   Width="150"
+                                  Tag="Сортировка"
                                   ItemsSource="{Binding ServiceSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedServiceSort, UpdateSourceTrigger=PropertyChanged}"/>
                         

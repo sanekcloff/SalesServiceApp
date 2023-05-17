@@ -2,14 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="ButtonStyle1" TargetType="Button">
-        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_White}"/>
         <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="35"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{StaticResource ButtonColor}"
+                    <Border Background="{StaticResource scb_Element}"
                             CornerRadius="8"
-                            Height="20"
                             x:Name="Border">
                         <ContentPresenter Content="{TemplateBinding Content}"
                                           HorizontalAlignment="Center"
@@ -18,10 +18,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorMouseOver}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonColorPressed}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -30,9 +30,10 @@
     </Style>
     
     <Style x:Key="ButtonStyle2" TargetType="Button">
-        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_White}"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="25"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -61,13 +62,13 @@
                 Stretch="Uniform"/>
     
     <Style x:Key="AboutUsButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource AboutUs}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -97,13 +98,13 @@
                 Stretch="Uniform"/>
     
     <Style x:Key="QuestionsButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource Questions}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -133,13 +134,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="HistoryButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource History}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -169,13 +170,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="LogOutButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource LogOut}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -205,13 +206,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="NewsButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource News}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -241,13 +242,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="OrdersButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource Orders}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -277,13 +278,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="ProductsButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource Products}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -313,13 +314,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="ReviewsButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource Reviews}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -349,13 +350,13 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="AccountButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{StaticResource Account}"
-                            Height="30"
-                            Width="30"
-                            Margin="5"
                             x:Name="Border"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -403,18 +404,18 @@
                         <TextBlock Grid.Column="1"
                                    Text="Заказать"
                                    FontFamily="Cascadia Code"
-                                   Foreground="{StaticResource ButtonColor}"
+                                   Foreground="{StaticResource scb_Element}"
                                    VerticalAlignment="Center"
                                    x:Name="TextBlock1"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Active}"/>
-                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorMouseOver}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource scb_ElementMouseOver}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Pressed}"/>
-                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorPressed}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource scb_ElementPressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -445,18 +446,18 @@
                         <TextBlock Grid.Column="1"
                                    Text="Отменить"
                                    FontFamily="Cascadia Code"
-                                   Foreground="{StaticResource ButtonColor}"
+                                   Foreground="{StaticResource scb_Element}"
                                    VerticalAlignment="Center"
                                    x:Name="TextBlock1"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Active}"/>
-                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorMouseOver}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource scb_ElementMouseOver}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource Orders_Pressed}"/>
-                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource ButtonColorPressed}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource scb_ElementPressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

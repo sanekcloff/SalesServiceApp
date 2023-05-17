@@ -79,6 +79,24 @@
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Star.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Email.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Email_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Email_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Login.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Login_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Login_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Organization.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Organization_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Organization_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Password.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Password_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Password_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\People.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\People_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\People_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Phone.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Phone_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Phone_Focused.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Search.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Search_Active.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Search_Focused.png" />
@@ -97,6 +115,60 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Email.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Email_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Email_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Login.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Login_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Login_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Organization.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Organization_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Organization_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Password.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Password_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Password_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\People.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\People_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\People_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Phone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Phone_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Phone_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Styles\Pictures\TextBox\Search.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

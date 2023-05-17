@@ -2,27 +2,19 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--#region Window Backgrounds-->
-    <SolidColorBrush x:Key="BackgroundLight" Color="#138198"/>
-    <SolidColorBrush x:Key="BackgroundDark" Color="#275D75"/>
-    <SolidColorBrush x:Key="BackgroundVeryDark" Color="#153340"/>
-    <SolidColorBrush x:Key="BackgroundWhite" Color="White"/>
+    <SolidColorBrush x:Key="scb_Primary" Color="#138198"/>
+    <SolidColorBrush x:Key="scb_Secondary" Color="#275D75"/>
+    <SolidColorBrush x:Key="scb_Tertiary" Color="#153340"/>
     <!--#endregion-->
-    <!--#region Foregrounds-->
-    <SolidColorBrush x:Key="ForegroundColor1" Color="White"/>
-    <SolidColorBrush x:Key="ForegroundColor2" Color="Black"/>
-    <SolidColorBrush x:Key="ForegroundColor3" Color="Red"/>
-    <!--#endregion-->
-    <!--#region Button-->
-    <SolidColorBrush x:Key="ButtonColor" Color="#ffab5e"/>
-    <SolidColorBrush x:Key="ButtonColorMouseOver" Color="#FF9635"/>
-    <SolidColorBrush x:Key="ButtonColorPressed" Color="#FFC56C19"/>
-    <SolidColorBrush x:Key="ButtonForegroundColor" Color="White"/>
-    <!--#endregion-->
-    <!--#region TextBox-->
-    <SolidColorBrush x:Key="TextBoxBackground1" Color="#FF1B3642"/>
-    <SolidColorBrush x:Key="TextBoxBackground2" Color="White"/>
-    <SolidColorBrush x:Key="TextBoxForeground1" Color="White"/>
-    <SolidColorBrush x:Key="TextBoxForeground2" Color="Black"/>
-    <SolidColorBrush x:Key="Watermark" Color="#FF969696"/>
+    <!--#region Elements-->
+    <SolidColorBrush x:Key="scb_White" Color="White"/>
+    <SolidColorBrush x:Key="scb_Black" Color="Black"/>
+    <SolidColorBrush x:Key="scb_Red" Color="Red"/>
+   
+    <SolidColorBrush x:Key="scb_Element" Color="#ffab5e"/>
+    <SolidColorBrush x:Key="scb_ElementMouseOver" Color="#FF9635"/>
+    <SolidColorBrush x:Key="scb_ElementPressed" Color="#FFC56C19"/>
+
+    <SolidColorBrush x:Key="scb_Watermark" Color="#FF969696"/>
     <!--#endregion-->
 </ResourceDictionary>

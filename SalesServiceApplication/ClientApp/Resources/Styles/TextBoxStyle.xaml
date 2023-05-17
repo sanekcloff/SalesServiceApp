@@ -14,7 +14,7 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="SearchTextBox" TargetType="TextBox">
-        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground2}"/>
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -26,7 +26,7 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="MainBorder"
                             CornerRadius="8"
-                            Background="{StaticResource TextBoxBackground2}">
+                            Background="{StaticResource scb_White}">
                         <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="20"/>
@@ -52,7 +52,7 @@
                                    HorizontalAlignment="Left"
                                    Margin="5 0 0 0"
                                    Content="Поиск"
-                                   Foreground="{StaticResource Watermark}"
+                                   Foreground="{StaticResource scb_Watermark}"
                                    Visibility="Collapsed"/>
                         </Grid>
                     </Border>
@@ -76,5 +76,461 @@
     </Style>
     
     <!--#endregion-->
-    
+
+    <!--#region PeopleTextBox-->
+
+    <ImageBrush x:Key="People"
+                ImageSource="\Resources\Styles\Pictures\TextBox\People.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="People_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\People_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="People_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\People_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="PeopleTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource People}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="{TemplateBinding Tag}"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource People_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource People_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region LoginTextBox-->
+
+    <ImageBrush x:Key="Login"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Login.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Login_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Login_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Login_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Login_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="LoginTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Login}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Логин"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Login_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Login_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region PasswordTextBox-->
+
+    <ImageBrush x:Key="Password"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Password.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Password_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Password_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Password_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Password_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="PasswordTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Password}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Пароль"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Password_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Password_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region PhoneTextBox-->
+
+    <ImageBrush x:Key="Phone"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Phone.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Phone_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Phone_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Phone_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Phone_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="PhoneTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Phone}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Телефон"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Phone_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Phone_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region EmailTextBox-->
+
+    <ImageBrush x:Key="Email"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Email.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Email_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Email_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Email_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Email_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="EmailTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Email}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Email"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Email_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Email_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region OrganizationTextBox-->
+
+    <ImageBrush x:Key="Organization"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Organization.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Organization_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Organization_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Organization_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Organization_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="OrganizationTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Organization}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Организация"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Organization_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Organization_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
 </ResourceDictionary>

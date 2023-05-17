@@ -3,6 +3,8 @@
 
     <ImageSource x:Key="Logo">\Resources\Logos\Logo.png</ImageSource>
     <ImageSource x:Key="Icon">\Resources\Icons\Icon.ico</ImageSource>
+    
     <ImageSource x:Key="ReviewsIcon">\Resources\Icons\ReviewsIcon.ico</ImageSource>
     <ImageSource x:Key="QuestionsIcon">\Resources\Icons\QuestionsIcon.ico</ImageSource>
+    
 </ResourceDictionary>

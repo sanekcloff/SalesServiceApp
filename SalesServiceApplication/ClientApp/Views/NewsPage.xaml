@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="740">
+             d:DesignHeight="600" d:DesignWidth="940">
     
     <Grid>
         
@@ -37,6 +37,7 @@
                 
                 <ComboBox Margin="0,0,20,0"
                           Width="150"
+                          Tag="Сортировка"
                           ItemsSource="{Binding NewsSorts, UpdateSourceTrigger=PropertyChanged}"
                           SelectedItem="{Binding SelectedSortValue, UpdateSourceTrigger=PropertyChanged}"/>
             

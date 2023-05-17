@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         x:Name="AuthorizationWind"
         Title="Авторизация" Height="450" Width="300"
-        Background="{StaticResource BackgroundLight}"
+        Background="{StaticResource scb_Primary}"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Icon="{StaticResource Icon}">
@@ -37,23 +37,27 @@
             <TextBox Width="170"
                      MaxLength="20"
                      Margin="0,0,0,10"
-                     Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
+                     Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource LoginTextBox}"
+                     Tag="Введите логин"/>
             
             <TextBox Width="170"
                      MaxLength="20"
-                     Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+                     Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource PasswordTextBox}"
+                     Tag="Введите логин"/>
             
             <Button Content="Войти"
-                                Width="120"
-                                Margin="0,20,0,0"
-                                Style="{StaticResource ButtonStyle1}"
-                                Command="{Binding AuthorizationButton}"/>
+                    Width="120"
+                    Margin="0,20,0,0"
+                    Style="{StaticResource ButtonStyle1}"
+                    Command="{Binding AuthorizationButton}"/>
             
             <Button Content="Регистрация"
-                                Width="80"
-                                Margin="10"
-                                Style="{StaticResource ButtonStyle2}"
-                                Command="{Binding RegistrationButton}"/>
+                    Width="80"
+                    Margin="0"
+                    Style="{StaticResource ButtonStyle2}"
+                    Command="{Binding RegistrationButton}"/>
             
         </StackPanel>
         

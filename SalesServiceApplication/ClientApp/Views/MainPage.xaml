@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="940">
+             d:DesignHeight="600" d:DesignWidth="940">
     
     <TabControl>
         
@@ -42,11 +42,13 @@
                         
                         <ComboBox Margin="0,0,10,0"
                                   Width="150"
+                                  Tag="Сортировка"
                                   ItemsSource="{Binding ProductSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedProductSort, UpdateSourceTrigger=PropertyChanged}"/>
                         
                         <ComboBox Margin="0,0,20,0"
                                   Width="270"
+                                  Tag="Фильтраия"
                                   ItemsSource="{Binding ProductFilthers, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedProductFilther, UpdateSourceTrigger=PropertyChanged}"/>
                     
@@ -55,9 +57,9 @@
                 </Grid>
                 
                 <ListView Grid.Row="1"
-                        Style="{StaticResource ProductsListView}"
-                        ItemsSource="{Binding Products, UpdateSourceTrigger=PropertyChanged}"
-                        SelectedItem="{Binding SelectedProduct, UpdateSourceTrigger=PropertyChanged}"/>
+                          Style="{StaticResource ProductsListView}"
+                          ItemsSource="{Binding Products, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedProduct, UpdateSourceTrigger=PropertyChanged}"/>
                 
                 <Grid Grid.Row="2">
                     
@@ -118,6 +120,7 @@
                         
                         <ComboBox Margin="0,0,20,0"
                                   Width="150"
+                                  Tag="Сортировка"
                                   ItemsSource="{Binding ServiceSorts, UpdateSourceTrigger=PropertyChanged}"
                                   SelectedItem="{Binding SelectedServiceSort, UpdateSourceTrigger=PropertyChanged}"/>
                     
@@ -126,9 +129,9 @@
                 </Grid>
                 
                 <ListView Grid.Row="1"
-                        Style="{StaticResource ServicesListView}"
-                        ItemsSource="{Binding Services, UpdateSourceTrigger=PropertyChanged}"
-                        SelectedItem="{Binding SelectedService, UpdateSourceTrigger=PropertyChanged}"/>
+                          Style="{StaticResource ServicesListView}"
+                          ItemsSource="{Binding Services, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedService, UpdateSourceTrigger=PropertyChanged}"/>
                 
                 <Grid Grid.Row="2">
                     

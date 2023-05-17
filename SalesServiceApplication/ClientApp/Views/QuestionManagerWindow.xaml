@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="QuestionManagerWindow" Height="250" Width="300"
-        Background="{StaticResource BackgroundLight}"
+        Background="{StaticResource scb_Primary}"
         ResizeMode="NoResize"
         Icon="{StaticResource QuestionsIcon}">
     
