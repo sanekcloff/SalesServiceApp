@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -69,6 +70,9 @@
     <None Remove="Resources\Styles\Pictures\Button\Orders.png" />
     <None Remove="Resources\Styles\Pictures\Button\Orders_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Orders_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Pdf.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Pdf_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Pdf_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Button\Products.png" />
     <None Remove="Resources\Styles\Pictures\Button\Products_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Products_Pressed.png" />
@@ -97,9 +101,15 @@
     <None Remove="Resources\Styles\Pictures\TextBox\Phone.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Phone_Active.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Phone_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Question.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Question_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Question_Focused.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Search.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Search_Active.png" />
     <None Remove="Resources\Styles\Pictures\TextBox\Search_Focused.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Text.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Text_Active.png" />
+    <None Remove="Resources\Styles\Pictures\TextBox\Text_Focused.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Active.png" />
     <None Remove="Resources\Styles\Pictures\Window\Collapse_Pressed.png" />
@@ -115,6 +125,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Styles\Pictures\Button\Pdf.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Pdf_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Pdf_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Styles\Pictures\TextBox\Email.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -167,6 +186,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\TextBox\Phone_Focused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Question.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Question_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Question_Focused.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\TextBox\Search.png">
@@ -403,6 +431,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Star.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Text.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Text_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\TextBox\Text_Focused.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Window\Collapse.png">

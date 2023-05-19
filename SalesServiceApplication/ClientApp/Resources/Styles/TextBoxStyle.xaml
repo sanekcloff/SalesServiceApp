@@ -533,4 +533,155 @@
 
     <!--#endregion-->
 
+    <!--#region QuestionTextBox-->
+
+    <ImageBrush x:Key="Question"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Question.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Question_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Question_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Question_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Question_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="QuestionTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 0 0 0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Question}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="5 0 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Вопрос"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Question_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Question_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region TextTextBox-->
+
+    <ImageBrush x:Key="Text"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Text.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Text_Active"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Text_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Text_Focused"
+                ImageSource="\Resources\Styles\Pictures\TextBox\Text_Focused.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="TextTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource scb_Black}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="MainBorder"
+                            CornerRadius="8"
+                            Background="{StaticResource scb_White}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          Grid.Column="1"
+                                          Margin="5 5 0 5"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            <Border Background="{StaticResource Text}"
+                                    x:Name="LogoBorder"
+                                    Height="15"
+                                    Width="15"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Top"
+                                    Margin="5 5 0 0"
+                                    ToolTip="{TemplateBinding Tag}"/>
+                            <Label x:Name="Watermark"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"
+                                   Margin="5 0 0 0"
+                                   Content="Текст"
+                                   Foreground="{StaticResource scb_Watermark}"
+                                   Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Text_Active}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Text_Focused}" TargetName="LogoBorder"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Watermark"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
 </ResourceDictionary>

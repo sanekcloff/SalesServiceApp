@@ -424,7 +424,59 @@
     </Style>
     
     <!--#endregion-->
-    
+
+    <!--#region AddOrderButton-->
+
+    <ImageBrush x:Key="Pdf"
+                ImageSource="\Resources\Styles\Pictures\Button\Pdf.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Pdf_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Pdf_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Pdf_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Pdf_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="PdfButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{StaticResource Pdf}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                        </Border>
+                        <TextBlock Grid.Column="1"
+                                   Text="Получить счёт"
+                                   FontFamily="Cascadia Code"
+                                   Foreground="{StaticResource scb_Element}"
+                                   VerticalAlignment="Center"
+                                   x:Name="TextBlock1"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Pdf_Active}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource scb_ElementMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Pdf_Pressed}"/>
+                            <Setter TargetName="TextBlock1" Property="Foreground" Value="{StaticResource scb_ElementPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
     <!--#region RemoveOrderButton-->
 
     <Style x:Key="RemoveOrderButton" TargetType="Button">

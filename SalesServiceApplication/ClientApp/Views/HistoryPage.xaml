@@ -58,6 +58,7 @@
                 
                 <ListView Grid.Row="1"
                           Style="{StaticResource ProductHistoryListView}"
+                          
                           ItemsSource="{Binding ProductOrders, UpdateSourceTrigger=PropertyChanged}"
                           SelectedItem="{Binding SelectedProductOrder, UpdateSourceTrigger=PropertyChanged}"/>
                 
@@ -68,7 +69,13 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    
+
+                    <Button Style="{StaticResource PdfButton}"
+                            Command="{Binding CreateProductPDFButton}"
+                            HorizontalAlignment="Left"
+                            Margin="5,0"
+                            VerticalAlignment="Center"/>
+
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
                                Text="{Binding ProductsCount, UpdateSourceTrigger=PropertyChanged}"
@@ -134,7 +141,13 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    
+
+                    <Button Style="{StaticResource PdfButton}"
+                            Command="{Binding CancelServiceOrderButton}"
+                            HorizontalAlignment="Left"
+                            Margin="5,0"
+                            VerticalAlignment="Center"/>
+
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
                                Text="{Binding ServicesCount, UpdateSourceTrigger=PropertyChanged}"

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClientApp.Views"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Создание отзыва" Height="250" Width="300"
+        Title="Создание отзыва" Height="250" Width="320"
         Background="{StaticResource scb_Primary}"
         ResizeMode="NoResize"
         Icon="{StaticResource ReviewsIcon}">
@@ -51,7 +51,9 @@
                     Grid.Row="1">
 
             <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
-                     Height="100"/>
+                     Height="100"
+                     Width="280"
+                     Style="{StaticResource TextTextBox}"/>
             
             <Button Style="{StaticResource ButtonStyle1}"
                     Margin="0,8,0,0"

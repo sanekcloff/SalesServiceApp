@@ -46,17 +46,12 @@
                     Content="Вопросы"
                     Command="{Binding QuestionsPageButton}"
                     Style="{StaticResource QuestionsButton}"/>
-            
+
             <Button Height="50"
                     Content="Отзывы"
                     Command="{Binding ReviewsPageButton}"
                     Style="{StaticResource ReviewsButton}"/>
-            
-            <Button Height="50"
-                    Content="О нас"
-                    Command="{Binding AboutUsPageButton}"
-                    Style="{StaticResource AboutUsButton}"/>
-            
+
             <Button Height="50"
                     Content="Учётная запись"
                     Command="{Binding AccountPageButton}"

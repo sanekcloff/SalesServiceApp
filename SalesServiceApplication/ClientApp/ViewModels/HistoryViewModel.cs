@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
+using AppData.Commands;
+using AppData.Converter;
+using System.Windows.Forms;
 
 namespace ClientApp.ViewModels
 {
@@ -155,6 +158,20 @@ namespace ClientApp.ViewModels
             else
                 return serviceOrders;
         }
+        private void CreateProductPdf()
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            var folderPath = string.Empty;
+
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                folderPath = fbd.SelectedPath;
+                PdfConverter.CretePdfFile(folderPath, SelectedProductOrder);
+            }
+        }
+        #endregion
+        #region Command
+        public ICommand CreateProductPDFButton => new Command(createpdf => CreateProductPdf());
         #endregion
     }
 }

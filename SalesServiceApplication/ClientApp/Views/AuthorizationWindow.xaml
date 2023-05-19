@@ -35,14 +35,14 @@
                                Margin="0,0,0,40"/>
             
             <TextBox Width="170"
-                     MaxLength="20"
+                     MaxLength="30"
                      Margin="0,0,0,10"
                      Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource LoginTextBox}"
                      Tag="Введите логин"/>
             
             <TextBox Width="170"
-                     MaxLength="20"
+                     MaxLength="30"
                      Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource PasswordTextBox}"
                      Tag="Введите логин"/>

@@ -9,13 +9,16 @@
   <ItemGroup>
     <Compile Remove="Resources\**" />
     <Compile Remove="Storage\Images\**" />
-    <Compile Remove="Storage\Pictures\**" />
     <EmbeddedResource Remove="Resources\**" />
     <EmbeddedResource Remove="Storage\Images\**" />
-    <EmbeddedResource Remove="Storage\Pictures\**" />
     <None Remove="Resources\**" />
     <None Remove="Storage\Images\**" />
-    <None Remove="Storage\Pictures\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Storage\Pictures\ic_qrcode.gif" />
+    <None Remove="Storage\Pictures\ic_qrcode.png" />
+    <None Remove="Storage\Pictures\ic_Title.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +32,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="PDFsharp" Version="6.0.0-preview-2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Storage\Pictures\ic_qrcode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Storage\Pictures\ic_Title.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

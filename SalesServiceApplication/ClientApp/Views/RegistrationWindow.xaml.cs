@@ -27,9 +27,5 @@ namespace ClientApp.Views
             DataContext = new RegistrationViewModel(ctx);
         }
 
-        private void LastNameTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            
-        }
     }
 }
