@@ -10,7 +10,7 @@ using System.Windows.Input;
 using System.Windows;
 using AppData.Commands;
 using AppData.Converter;
-using System.Windows.Forms;
+
 
 namespace ClientApp.ViewModels
 {
@@ -160,18 +160,22 @@ namespace ClientApp.ViewModels
         }
         private void CreateProductPdf()
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            var folderPath = string.Empty;
-
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                folderPath = fbd.SelectedPath;
-                PdfConverter.CretePdfFile(folderPath, SelectedProductOrder);
-            }
+            if (SelectedProductOrder!=null)
+                PdfConverter.CretePdfFile(SelectedProductOrder);
+            else
+                MessageBox.Show("Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        private void CreateServicePdf()
+        {
+            if (SelectedServiceOrder != null)
+                PdfConverter.CretePdfFile(SelectedServiceOrder);
+            else
+                MessageBox.Show("Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         #endregion
         #region Command
         public ICommand CreateProductPDFButton => new Command(createpdf => CreateProductPdf());
+        public ICommand CreateServicePDFButton => new Command(createpdf => CreateServicePdf());
         #endregion
     }
 }

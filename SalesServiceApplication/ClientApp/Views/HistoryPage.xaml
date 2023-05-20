@@ -143,7 +143,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Style="{StaticResource PdfButton}"
-                            Command="{Binding CancelServiceOrderButton}"
+                            Command="{Binding CreateServicePDFButton}"
                             HorizontalAlignment="Left"
                             Margin="5,0"
                             VerticalAlignment="Center"/>
