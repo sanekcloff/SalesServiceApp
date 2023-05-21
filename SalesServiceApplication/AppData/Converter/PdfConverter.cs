@@ -228,10 +228,5 @@ namespace AppData.Converter
             document.Save(folderPath);
             Process.Start(new ProcessStartInfo(folderPath) { UseShellExecute = true });
         }
-        private static void DrawImage(XGraphics gfx, string picturePath, int x, int y, int width, int height)
-        {
-            XImage imageMu = XImage.FromFile(picturePath);
-            gfx.DrawImage(imageMu, x, y, width, height);
-        }
     }
 }
