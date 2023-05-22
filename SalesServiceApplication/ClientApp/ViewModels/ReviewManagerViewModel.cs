@@ -14,17 +14,26 @@ namespace ClientApp.ViewModels
 {
     public class ReviewManagerViewModel : ViewModelBase
     {
-        public ReviewManagerViewModel(Client client, ReviewService reviewService)
+        public ReviewManagerViewModel(Client client, Review? review, ReviewService reviewService)
         {
+            if (review==null)
+            {
+                Review = new Review() { Client = client, DateOfAdd = DateTime.Now };
+                Grade = 1;
+            }
+            else
+            {
+                Text = review.Text;
+                Grade = review.Grade;
+                Review = review;
+            }
             _reviewService= reviewService;
-            Review = new Review() { Client=client, DateOfAdd=DateTime.Now};
-            Grade = 1;
         }
         #region Services
         private ReviewService _reviewService;
         #endregion
         #region Fields & Properties
-        private Review _review;
+        private Review? _review;
         private string _text;
         private int _grade;
 
@@ -46,9 +55,22 @@ namespace ClientApp.ViewModels
             else
                 MessageBox.Show("Отзыв должен содержать текст!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+        private void EditReview()
+        {
+            if (!FieldsIsNull())
+            {
+                Review.Grade = Grade;
+                Review.Text = Text;
+                _reviewService.Update(Review);
+                MessageBox.Show($"Отзыв обновлён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+                MessageBox.Show("Заполните поля!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
         #endregion
         #region Commands
         public ICommand AddReviewButton => new Command(addreview => AddReview());
+        public ICommand EditReviewButton => new Command(editreview => EditReview());
         #endregion
     }
 }

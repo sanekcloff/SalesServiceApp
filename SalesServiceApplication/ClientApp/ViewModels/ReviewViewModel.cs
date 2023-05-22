@@ -121,10 +121,23 @@ namespace ClientApp.ViewModels
         }
         private void OpenAddReviewManagerWindow()
         {
-            new ReviewManagerWindow(_client, _reviewService).ShowDialog();
+            if (GetClientReviews().Count>0)
+                MessageBox.Show("Нельзя оставить больше 1-го отзыва!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                new ReviewManagerWindow(_client,null, _reviewService).ShowDialog();
             UpdateLists();
         }
         private bool SelectedReviewIsNull() => SelectedReview == null;
+        private void OpenEditReviewManagerWindow()
+        {
+            if (!SelectedReviewIsNull())
+            {
+                new ReviewManagerWindow(_client, SelectedReview, _reviewService).ShowDialog();
+                UpdateLists();
+            }
+            else
+                MessageBox.Show("Выберите отзыв!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
         private void DeleteQuestion()
         {
             if (!SelectedReviewIsNull())
@@ -143,6 +156,7 @@ namespace ClientApp.ViewModels
         #endregion
         #region Comands
         public ICommand OpenAddManagerWindow => new Command(addReview => OpenAddReviewManagerWindow());
+        public ICommand OpenEditManagerWindow => new Command(editReview => OpenEditReviewManagerWindow());
         public ICommand DeleteReviewButton => new Command(deleteReview => DeleteQuestion());
         #endregion
     }

@@ -22,10 +22,23 @@ namespace ClientApp.Views
     /// </summary>
     public partial class ReviewManagerWindow : Window
     {
-        public ReviewManagerWindow(Client client, ReviewService reviewService)
+        public ReviewManagerWindow(Client client, Review? review, ReviewService reviewService)
         {
             InitializeComponent();
-            DataContext = new ReviewManagerViewModel(client, reviewService);
+            var viewModel = new ReviewManagerViewModel(client, review, reviewService);
+            if (review == null)
+            {
+                Title = "Создание отызва";
+                ActionButton.Content = "Создать";
+                ActionButton.Command = viewModel.AddReviewButton;
+            }
+            else
+            {
+                Title = "Редактирование отзыва";
+                ActionButton.Content = "Сохранить";
+                ActionButton.Command = viewModel.EditReviewButton;
+            }
+            DataContext = viewModel;
         }
     }
 }

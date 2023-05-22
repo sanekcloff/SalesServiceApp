@@ -137,7 +137,13 @@
                             HorizontalAlignment="Left"
                             Margin="2,0"
                             VerticalAlignment="Center"/>
-                        
+
+                        <Button Style="{StaticResource EditButton}"
+                            Command="{Binding OpenEditManagerWindow}"
+                            HorizontalAlignment="Left"
+                            Margin="2,0"
+                            VerticalAlignment="Center"/>
+
                         <Button Style="{StaticResource DeleteButton}"
                             Command="{Binding DeleteReviewButton}"
                             HorizontalAlignment="Left"

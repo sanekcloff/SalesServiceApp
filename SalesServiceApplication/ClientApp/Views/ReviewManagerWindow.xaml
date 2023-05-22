@@ -59,10 +59,8 @@
                     Margin="0,8,0,0"
                     Width="100"
                     x:Name="ActionButton"
-                    Content="Создать"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    Command="{Binding AddReviewButton}"/>
+                    VerticalAlignment="Bottom"/>
             
         </StackPanel>
         

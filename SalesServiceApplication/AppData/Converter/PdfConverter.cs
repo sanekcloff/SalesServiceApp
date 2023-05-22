@@ -37,7 +37,7 @@ namespace AppData.Converter
             var font2 = new XFont("Cascadia Code", 16, XFontStyleEx.Regular);
             var font3 = new XFont("Cascadia Code", 11, XFontStyleEx.Regular);
 
-            var folderPath = $@"ProdctInvoice{productOrder.Id}.pdf";
+            var folderPath = $@"ProdctInvoice.pdf";
 
             gfx.DrawLine(XPens.Black, width / 12, 20, width - (width / 12), 20);
             gfx.DrawString("СЧЁТ ЗА ПРИОБРЕТЕНИЕ ПРОДУКТА", font1, XBrushes.Black,
@@ -184,7 +184,7 @@ namespace AppData.Converter
             var font2 = new XFont("Cascadia Code", 16, XFontStyleEx.Regular);
             var font3 = new XFont("Cascadia Code", 11, XFontStyleEx.Regular);
 
-            var folderPath = $@"ServiceInvoice{serviceOrder.Id}.pdf";
+            var folderPath = $@"ServiceInvoice.pdf";
 
             gfx.DrawLine(XPens.Black, width / 12, 20, width - (width / 12), 20);
             gfx.DrawString("СЧЁТ ЗА ПРИОБРЕТЕНИЕ УСЛУГИ", font1, XBrushes.Black,
