@@ -1,13 +1,9 @@
 ﻿using AppData.Commands;
 using AppData.Entities;
 using AppData.Services;
-using AppData.Storage.Enums;
 using AppData.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 

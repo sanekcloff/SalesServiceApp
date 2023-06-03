@@ -5,12 +5,8 @@ using AppData.Services;
 using AppData.Validations;
 using AppData.ViewModel;
 using ClientApp.Views;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 

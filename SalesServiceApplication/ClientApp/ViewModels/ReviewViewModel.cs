@@ -2,11 +2,8 @@
 using AppData.Services;
 using AppData.ViewModel;
 using ClientApp.Views;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 using AppData.Commands;
