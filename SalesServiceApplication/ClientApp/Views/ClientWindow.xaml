@@ -16,49 +16,41 @@
     <Grid>
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="70"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
         <StackPanel Background="{StaticResource scb_Tertiary}">
             
-            <Button Height="50"
-                    Content="Новости"
+            <Button Content="Новости"
                     Command="{Binding NewsPageButton}"
                     Style="{StaticResource NewsButton}"/>
             
-            <Button Height="50"
-                    Content="Главное"
+            <Button Content="Главное"
                     Command="{Binding MainPageButton}"
                     Style="{StaticResource ProductsButton}"/>
             
-            <Button Height="50"
-                    Content="Заказы"
+            <Button Content="Заказы"
                     Command="{Binding OrdersPageButton}"
                     Style="{StaticResource OrdersButton}"/>
             
-            <Button Height="50"
-                    Content="История"
+            <Button Content="История"
                     Command="{Binding HistoryPageButton}"
                     Style="{StaticResource HistoryButton}"/>
             
-            <Button Height="50"
-                    Content="Вопросы"
+            <Button Content="Вопросы"
                     Command="{Binding QuestionsPageButton}"
                     Style="{StaticResource QuestionsButton}"/>
 
-            <Button Height="50"
-                    Content="Отзывы"
+            <Button Content="Отзывы"
                     Command="{Binding ReviewsPageButton}"
                     Style="{StaticResource ReviewsButton}"/>
 
-            <Button Height="50"
-                    Content="Учётная запись"
+            <Button Content="Учётная запись"
                     Command="{Binding AccountPageButton}"
                     Style="{StaticResource AccountButton}"/>
             
-            <Button Height="50"
-                    Content="Выйти из учётки"
+            <Button Content="Выйти из учётки"
                     Command="{Binding LogOutButton}"
                     Style="{StaticResource LogOutButton}"/>
             

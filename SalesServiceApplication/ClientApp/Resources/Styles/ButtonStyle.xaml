@@ -64,7 +64,7 @@
     <Style x:Key="AboutUsButton" TargetType="Button">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Margin" Value="5 8"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -98,9 +98,9 @@
                 Stretch="Uniform"/>
     
     <Style x:Key="QuestionsButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -134,9 +134,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="HistoryButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -170,9 +170,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="LogOutButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -206,9 +206,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="NewsButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -242,9 +242,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="OrdersButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -278,9 +278,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="ProductsButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -314,9 +314,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="ReviewsButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -350,9 +350,9 @@
                 Stretch="Uniform"/>
 
     <Style x:Key="AccountButton" TargetType="Button">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -403,6 +403,7 @@
                         </Border>
                         <TextBlock Grid.Column="1"
                                    Text="Заказать"
+                                   FontSize="14"
                                    FontFamily="Cascadia Code"
                                    Foreground="{StaticResource scb_Element}"
                                    VerticalAlignment="Center"
@@ -425,7 +426,7 @@
     
     <!--#endregion-->
 
-    <!--#region AddOrderButton-->
+    <!--#region PdfButton-->
 
     <ImageBrush x:Key="Pdf"
                 ImageSource="\Resources\Styles\Pictures\Button\Pdf.png"
@@ -439,7 +440,7 @@
 
     <Style x:Key="PdfButton" TargetType="Button">
         <Setter Property="Height" Value="40"/>
-        <Setter Property="Width" Value="150"/>
+        <Setter Property="Width" Value="160"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -456,6 +457,7 @@
                         <TextBlock Grid.Column="1"
                                    Text="Получить счёт"
                                    FontFamily="Cascadia Code"
+                                   FontSize="14"
                                    Foreground="{StaticResource scb_Element}"
                                    VerticalAlignment="Center"
                                    x:Name="TextBlock1"/>
@@ -498,6 +500,7 @@
                         <TextBlock Grid.Column="1"
                                    Text="Отменить"
                                    FontFamily="Cascadia Code"
+                                   FontSize="14"
                                    Foreground="{StaticResource scb_Element}"
                                    VerticalAlignment="Center"
                                    x:Name="TextBlock1"/>

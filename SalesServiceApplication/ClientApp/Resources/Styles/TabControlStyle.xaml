@@ -4,7 +4,6 @@
     <Style TargetType="TabControl">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontFamily" Value="Cascadia Code"/>
     </Style>
     
     <Style TargetType="TabItem">
@@ -13,12 +12,13 @@
         <Setter Property="FontFamily" Value="Cascadia Code"/>
         <Setter Property="Width" Value="auto"/>
         <Setter Property="Opacity" Value="0.7"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
-                    <Border Name="Border" Margin="5,0,5,2"
-                                CornerRadius="4">
+                    <Border Name="Border"
+                            Margin="5,0,5,2"
+                            CornerRadius="4">
                         <ContentPresenter  VerticalAlignment="Center" Margin="3"
                                                HorizontalAlignment="Center"
                                                ContentSource="Header"/>

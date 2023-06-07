@@ -6,6 +6,7 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="ItemContainerStyle">
             <Setter.Value>
@@ -21,16 +22,16 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="12"/>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
-                                               Height="100"
-                                               Width="100"
+                                               Height="130"
+                                               Width="130"
                                                Stretch="Uniform"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -40,7 +41,7 @@
                                                     Margin="5">
                                             <StackPanel Orientation="Vertical">
                                                 <TextBlock Text="НОВИНКА"
-                                                           FontSize="16"
+                                                           FontSize="20"
                                                            x:Name="TextBlock3"
                                                            Style="{StaticResource TextBlock3}"
                                                            FontWeight="Bold"
@@ -48,10 +49,11 @@
                                                 <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                             </StackPanel>
                                             <TextBlock Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
                                                        TextWrapping="Wrap"
+                                                       FontSize="16"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Medium"/>
                                         </StackPanel>
@@ -60,19 +62,21 @@
                                                     VerticalAlignment="Top"
                                                     Margin="5">
                                             <TextBlock Text="Цена:"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding CorrectCost, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock x:Name="TextBlock1"
                                                        Text="{Binding Cost, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
                                                        TextDecorations="Strikethrough"
                                                        Visibility="Collapsed"
+                                                       FontSize="16"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock x:Name="TextBlock2"
                                                        Text="{Binding CorrectDiscount,StringFormat=Скидка: {0}%}"
                                                        Visibility="Collapsed"
+                                                       FontSize="16"
                                                        Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
                                         <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
@@ -110,6 +114,7 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
         <Setter Property="ItemContainerStyle">
             <Setter.Value>
                 <Style TargetType="ListViewItem">
@@ -124,16 +129,16 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="12"/>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="105"/>
+                                            <ColumnDefinition Width="135"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
-                                               Height="100"
-                                               Width="100"
+                                               Height="130"
+                                               Width="130"
                                                Stretch="Uniform"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -143,7 +148,7 @@
                                                     Margin="5">
                                             <StackPanel Orientation="Vertical">
                                                 <TextBlock Text="НОВИНКА"
-                                                           FontSize="16"
+                                                           FontSize="20"
                                                            x:Name="TextBlock3"
                                                            Style="{StaticResource TextBlock3}"
                                                            FontWeight="Bold"
@@ -151,26 +156,27 @@
                                                 <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                             </StackPanel>
                                             <TextBlock Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
                                                        TextWrapping="Wrap"
                                                        Style="{StaticResource TextBlock2}"
-                                                       FontWeight="Medium"/>
+                                                       FontWeight="Medium"
+                                                       FontSize="16"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Top"
                                                     Margin="5">
                                             <TextBlock Text="Цена за час:"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding CostPerHour, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock1"/>
                                             <TextBlock Text="Договорная"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock2"
                                                        Visibility="Collapsed"/>
@@ -224,16 +230,16 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="12"/>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Product.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
-                                               Height="100"
-                                               Width="100"
+                                               Height="130"
+                                               Width="130"
                                                Stretch="Uniform"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -245,11 +251,13 @@
                                                 <TextBlock Text="{Binding Product.Title, UpdateSourceTrigger=PropertyChanged, StringFormat=Товар: {0}}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
-                                                       Style="{StaticResource TextBlock2}"/>
+                                                       Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Статус: {0}}"
-                                                       Style="{StaticResource TextBlock2}"/>
+                                                       Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
@@ -257,10 +265,10 @@
                                                     VerticalAlignment="Top"
                                                     Margin="5">
                                             <TextBlock Text="Цена:"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
                                         <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
@@ -305,16 +313,16 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="12"/>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="105"/>
+                                            <ColumnDefinition Width="135"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Service.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
-                                               Height="100"
-                                               Width="100"
+                                               Height="130"
+                                               Width="130"
                                                Stretch="Uniform"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -324,13 +332,15 @@
                                                     Margin="5">
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Service.Title, UpdateSourceTrigger=PropertyChanged}"
-                                                       Style="{StaticResource TextBlock2}"
-                                                       FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontWeight="Bold"
+                                                           FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
-                                                       Style="{StaticResource TextBlock2}"/>
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Статус: {0}}"
-                                                       Style="{StaticResource TextBlock2}"/>
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
@@ -338,14 +348,14 @@
                                                     VerticalAlignment="Top"
                                                     Margin="5">
                                             <TextBlock Text="Цена за час:"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding Service.CostPerHour, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock1"/>
                                             <TextBlock Text="Договорная"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock2"
                                                        Visibility="Collapsed"/>
@@ -396,16 +406,16 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="12"/>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Product.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
-                                               Height="100"
-                                               Width="100"
+                                               Height="130"
+                                               Width="130"
                                                Stretch="Uniform"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -417,15 +427,18 @@
                                                 <TextBlock Text="{Binding Product.Title, UpdateSourceTrigger=PropertyChanged, StringFormat=Товар: {0}}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
-                                                       Style="{StaticResource TextBlock2}"/>
+                                                       Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
                                                            Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock1"/>
+                                                           x:Name="TextBlock1"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
                                                            Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock2"/>
+                                                           x:Name="TextBlock2"
+                                                           FontSize="18"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
@@ -433,10 +446,10 @@
                                                     VerticalAlignment="Top"
                                                     Margin="5">
                                             <TextBlock Text="Цена:"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
                                         <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
@@ -481,16 +494,16 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="12"/>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="105"/>
+                                            <ColumnDefinition Width="135"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
                                                 x:Name="SideBorder1"/>
                                         <Image Source="{Binding Service.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
-                                               Height="100"
-                                               Width="100"
+                                               Height="130"
+                                               Width="130"
                                                Stretch="Uniform"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -502,15 +515,18 @@
                                                 <TextBlock Text="{Binding Service.Title, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
-                                                       Style="{StaticResource TextBlock2}"/>
+                                                       Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
                                                            Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock3"/>
+                                                           x:Name="TextBlock3"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
                                                            Style="{StaticResource TextBlock2}"
-                                                           x:Name="TextBlock4"/>
+                                                           x:Name="TextBlock4"
+                                                           FontSize="18"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
@@ -518,10 +534,10 @@
                                                     VerticalAlignment="Top"
                                                     Margin="5">
                                             <TextBlock Text="Цена:"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
                                             <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
-                                                       FontSize="14"
+                                                       FontSize="18"
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock1"/>
                                         </StackPanel>
@@ -586,7 +602,8 @@
                                             </StackPanel>
                                             <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
-                                                       TextWrapping="Wrap"/>
+                                                       TextWrapping="Wrap"
+                                                       FontSize="18"/>
                                         </StackPanel>
                                         <Border Grid.Column="2" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
@@ -640,32 +657,34 @@
                                                 <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged, StringFormat=Организация: {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            FontWeight="Bold"
-                                                           FontSize="16"
+                                                           FontSize="20"
                                                            x:Name="OganizationTextBlock"
                                                            Visibility="Collapsed"/>
-                                                <TextBlock Text="{Binding Client.FullName,StringFormat=От:{0:d},UpdateSourceTrigger=PropertyChanged}"
+                                                <TextBlock Text="{Binding Client.FullName,StringFormat=От: {0:d},UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
-                                                <TextBlock Text="{Binding Topic,StringFormat=Тема:{0:d},UpdateSourceTrigger=PropertyChanged}"
+                                                       FontSize="20"/>
+                                                <TextBlock Text="{Binding Topic,StringFormat=Тема: {0:d},UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                                 <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
-                                                       TextWrapping="Wrap"/>
+                                                       TextWrapping="Wrap"
+                                                           FontSize="18"/>
                                             </StackPanel>
                                             <StackPanel Orientation="Vertical"
                                                         x:Name="AnswerTextBlock"
                                                         Visibility="Collapsed"
                                                         Margin="0,5,0,0">
-                                                <TextBlock Text="{Binding Employee.FullName,StringFormat=Ответил:{0},UpdateSourceTrigger=PropertyChanged}"
+                                                <TextBlock Text="{Binding Employee.FullName,StringFormat=Ответил: {0},UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="18"/>
                                                 <TextBlock Text="{Binding Answer, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
-                                                       TextWrapping="Wrap"/>
+                                                       TextWrapping="Wrap"
+                                                           FontSize="16"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <Border Grid.Column="2" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
@@ -727,16 +746,17 @@
                                                 <TextBlock Text="{Binding Client.Organization,UpdateSourceTrigger=PropertyChanged, StringFormat=Организация: {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            FontWeight="Bold"
-                                                           FontSize="16"
+                                                           FontSize="20"
                                                            x:Name="OganizationTextBlock"
                                                            Visibility="Collapsed"/>
                                                 <TextBlock Text="{Binding Client.FullName,StringFormat=От:{0:d},UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="16"/>
+                                                       FontSize="20"/>
                                                 <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
-                                                       TextWrapping="Wrap"/>
+                                                       TextWrapping="Wrap"
+                                                           FontSize="18"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="2"
@@ -746,11 +766,11 @@
                                             <TextBlock Text="{Binding Grade,UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
-                                                       FontSize="24"
+                                                       FontSize="28"
                                                        VerticalAlignment="Center"
                                                        Margin="0,0,3,0"/>
                                             <Image Source="\Resources\Styles\Pictures\Star.png"
-                                                   Height="30"
+                                                   Height="50"
                                                    Stretch="Uniform"/>
                                         </StackPanel>
                                         <Border Grid.Column="3" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"

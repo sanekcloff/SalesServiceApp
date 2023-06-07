@@ -10,6 +10,7 @@ namespace AppData.DataBaseData
 {
     public class ApplicationDbContext:DbContext
     {
+
         private const string connectionString = @"Server=DESKTOP-I8L1GP6; Database=SalesServiceAppDB; Trusted_Connection=true; TrustServerCertificate=true;";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

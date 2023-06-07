@@ -80,11 +80,11 @@
                 <Grid Margin="0,0,0,5">
                     
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="30"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="8"
+                    <TextBlock Text="+7"
                                Style="{StaticResource TextBlock1}"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
@@ -94,7 +94,7 @@
                              Grid.Column="1"
                              MaxLength="10"
                              Margin="5 0 0 0"
-                             Width="230"
+                             Width="215"
                              HorizontalAlignment="Left"
                              Tag="Введите 10 цифр"
                              Style="{StaticResource PhoneTextBox}"/>

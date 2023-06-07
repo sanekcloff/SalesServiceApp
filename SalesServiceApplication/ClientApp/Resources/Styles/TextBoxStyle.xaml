@@ -48,6 +48,7 @@
                                     ToolTip="{TemplateBinding Tag}"/>
                             <Label x:Name="Watermark"
                                    Grid.Column="1"
+                                   FontSize="12"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Left"
                                    Margin="5 0 0 0"

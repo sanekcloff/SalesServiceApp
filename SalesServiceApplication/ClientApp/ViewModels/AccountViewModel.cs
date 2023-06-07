@@ -60,7 +60,7 @@ namespace ClientApp.ViewModels
             Password = _client.Password;
             Login = _client.Login;
             Email = _client.Email;
-            Phone = _client.Phone.Remove(0,1);
+            Phone = _client.Phone.Remove(0,2);
             Organization = _client.Organization;
         }
         private bool FieldsIsNullOrEmpty() => string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName) 
@@ -142,7 +142,7 @@ namespace ClientApp.ViewModels
                     _client.Password = Password;
                     _client.Login = Login;
                     _client.Email = Email;
-                    _client.Phone = "8" + Phone;
+                    _client.Phone = "+7" + Phone;
                     _client.Organization = Organization;
                     _clientService.Update(_client);
                     MessageBox.Show("Данные учётной записи успешно обновлены!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
