@@ -48,6 +48,7 @@
                                                            Visibility="Collapsed"/>
                                                 <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                             </StackPanel>
@@ -155,6 +156,7 @@
                                                            Visibility="Collapsed"/>
                                                 <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                             </StackPanel>
@@ -250,6 +252,7 @@
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Product.Title, UpdateSourceTrigger=PropertyChanged, StringFormat=Товар: {0}}"
                                                        Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
@@ -258,6 +261,11 @@
                                                 <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Статус: {0}}"
                                                        Style="{StaticResource TextBlock2}"
                                                            FontSize="18"/>
+                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Выполняет: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"
+                                                           x:Name="TextBlock3"
+                                                           Visibility="Collapsed"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
@@ -284,6 +292,9 @@
                                         <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                         <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
                                     </Trigger>
+                                    <DataTrigger Binding="{Binding IsInProgress}" Value="true">
+                                        <Setter TargetName="TextBlock3" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
@@ -333,6 +344,7 @@
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Service.Title, UpdateSourceTrigger=PropertyChanged}"
                                                            Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                            FontWeight="Bold"
                                                            FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
@@ -341,6 +353,11 @@
                                                 <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Статус: {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            FontSize="18"/>
+                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Выполняет: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"
+                                                           x:Name="TextBlock3"
+                                                           Visibility="Collapsed"/>
                                             </StackPanel>
                                         </StackPanel>
                                         <StackPanel Grid.Column="3"
@@ -376,6 +393,9 @@
                                     <DataTrigger Binding="{Binding Service.IsNegotiable}" Value="true">
                                         <Setter TargetName="TextBlock1" Property="Visibility" Value="Collapsed"/>
                                         <Setter TargetName="TextBlock2" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsInProgress}" Value="true">
+                                        <Setter TargetName="TextBlock3" Property="Visibility" Value="Visible"/>
                                     </DataTrigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -426,6 +446,7 @@
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Product.Title, UpdateSourceTrigger=PropertyChanged, StringFormat=Товар: {0}}"
                                                        Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
@@ -435,7 +456,7 @@
                                                            Style="{StaticResource TextBlock2}"
                                                            x:Name="TextBlock1"
                                                            FontSize="18"/>
-                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
+                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Выполнил(а): {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            x:Name="TextBlock2"
                                                            FontSize="18"/>
@@ -514,6 +535,7 @@
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Service.Title, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
@@ -523,7 +545,7 @@
                                                            Style="{StaticResource TextBlock2}"
                                                            x:Name="TextBlock3"
                                                            FontSize="18"/>
-                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Сотрудник: {0}}"
+                                                <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=Выполнил(а): {0}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            x:Name="TextBlock4"
                                                            FontSize="18"/>
@@ -591,7 +613,11 @@
                                         <StackPanel Grid.Column="1"
                                                     Margin="5">
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding PublicationDate,StringFormat={}{0:d}:,ConverterCulture=ru-RU, UpdateSourceTrigger=PropertyChanged}"
+                                                <TextBlock Text="{Binding PublicationDate,StringFormat={}{0:d},ConverterCulture=ru-RU, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontWeight="Bold"
+                                                       FontSize="20"/>
+                                                <TextBlock Text=" : "
                                                        Style="{StaticResource TextBlock2}"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
@@ -600,6 +626,9 @@
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                             </StackPanel>
+                                            <TextBlock Text="{Binding Employee.FullName, StringFormat=Сотрудник: {0}, UpdateSourceTrigger=PropertyChanged}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       FontSize="18"/>
                                             <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
                                                        TextWrapping="Wrap"
@@ -666,6 +695,7 @@
                                                        FontSize="20"/>
                                                 <TextBlock Text="{Binding Topic,StringFormat=Тема: {0:d},UpdateSourceTrigger=PropertyChanged}"
                                                        Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
                                                 <TextBlock Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
@@ -797,4 +827,227 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--#region EMPLOYEE-->
+    <Style TargetType="ListView" x:Key="EmpProductOrdersListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource scb_White}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <Image Source="{Binding Product.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
+                                               Height="130"
+                                               Width="130"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="1"
+                                               Margin="5"/>
+                                        <StackPanel Grid.Column="2"
+                                                    Margin="5">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Product.Title, UpdateSourceTrigger=PropertyChanged, StringFormat=Товар: {0}}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
+                                                       FontWeight="Bold"
+                                                       FontSize="20"/>
+                                                <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Статус: {0}}"
+                                                       Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                <StackPanel x:Name="InProgress"
+                                                            Visibility="Collapsed">
+                                                    <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Выполняет: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                </StackPanel>
+                                                <StackPanel x:Name="Completed"
+                                                            Visibility="Collapsed">
+                                                    <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Выполнил(а): {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                    <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="3"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
+                                                    Margin="5">
+                                            <TextBlock Text="Цена:"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                            <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                        </StackPanel>
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding IsInProgress}" Value="true">
+                                        <Setter TargetName="InProgress" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsCompleted}" Value="true">
+                                        <Setter TargetName="Completed" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListView" x:Key="EmpServiceOrdersListView">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Margin="10"
+                                        Background="{StaticResource scb_White}"
+                                        BorderBrush="Transparent"
+                                        BorderThickness="0"
+                                        CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="12"/>
+                                            <ColumnDefinition Width="140"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="135"/>
+                                            <ColumnDefinition Width="12"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
+                                                x:Name="SideBorder1"/>
+                                        <Image Source="{Binding Service.CorrectPicturePath, UpdateSourceTrigger=PropertyChanged}"
+                                               Height="130"
+                                               Width="130"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="1"
+                                               Margin="5"/>
+                                        <StackPanel Grid.Column="2"
+                                                    Margin="5">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Service.Title, UpdateSourceTrigger=PropertyChanged}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           TextWrapping="Wrap"
+                                                           FontWeight="Bold"
+                                                           FontSize="20"/>
+                                                <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Статус: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                <StackPanel x:Name="InProgress"
+                                                            Visibility="Collapsed">
+                                                    <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Выполняет: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                </StackPanel>
+                                                <StackPanel x:Name="Completed"
+                                                            Visibility="Collapsed">
+                                                    <TextBlock Text="{Binding Employee.FullName, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Выполнил(а): {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                    <TextBlock Text="{Binding DateOfComplete, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat=Дата завершения: {0:d}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="3"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
+                                                    Margin="5">
+                                            <TextBlock Text="Цена за час:"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                            <TextBlock Text="{Binding Service.CostPerHour, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       x:Name="TextBlock1"/>
+                                            <TextBlock Text="Договорная"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"
+                                                       x:Name="TextBlock2"
+                                                       Visibility="Collapsed"/>
+                                        </StackPanel>
+                                        <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
+                                                x:Name="SideBorder2"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementMouseOver}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SideBorder1" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                        <Setter TargetName="SideBorder2" Property="Background" Value="{StaticResource scb_ElementPressed}"/>
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding Service.IsNegotiable}" Value="true">
+                                        <Setter TargetName="TextBlock1" Property="Visibility" Value="Collapsed"/>
+                                        <Setter TargetName="TextBlock2" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsInProgress}" Value="true">
+                                        <Setter TargetName="InProgress" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsCompleted}" Value="true">
+                                        <Setter TargetName="Completed" Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    
 </ResourceDictionary>

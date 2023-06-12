@@ -18,25 +18,25 @@ using System.Windows.Shapes;
 namespace ClientApp.Views
 {
     /// <summary>
-    /// Логика взаимодействия для QuestionManagerWindow.xaml
+    /// Логика взаимодействия для EmpNewsManagerWindow.xaml
     /// </summary>
-    public partial class QuestionManagerWindow : Window
+    public partial class EmpNewsManagerWindow : Window
     {
-        public QuestionManagerWindow(Client client, Question? question, QuestionService questionService)
+        public EmpNewsManagerWindow(Employee employee, New? @new, NewsService newsService)
         {
             InitializeComponent();
-            var viewModel = new QuestionManagerViewModel(client, question, questionService,this);
-            if (question == null)
+            var viewModel = new EmpNewsManagerViewModel(employee, @new, newsService, this);
+            if (@new == null)
             {
-                Title = "Создание вопроса";
-                ActionButton.Content = "Создать";
-                ActionButton.Command = viewModel.AddQuestionButton;
+                Title = "Публикация новости";
+                ActionButton.Content = "Опубликовать";
+                ActionButton.Command = viewModel.AddNewButton;
             }
             else
             {
-                Title = "Редактирование вопроса";
+                Title = "Редактирование новости";
                 ActionButton.Content = "Сохранить";
-                ActionButton.Command = viewModel.EditQuestionButton;
+                ActionButton.Command = viewModel.EditNewButton;
             }
             DataContext = viewModel;
         }

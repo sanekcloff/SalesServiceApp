@@ -17,7 +17,7 @@ namespace AppData.Entities
         public int Id { get; set; }
 
         public string Title { get; set; } = null!;
-        public string? Description { get; set; } = null!;
+        public string Description { get; set; } = null!;
         public decimal CostPerHour { get; set; }
         public DateTime DateOfAdd { get; set; }
         public string? Picture { get; set; } = null!; 

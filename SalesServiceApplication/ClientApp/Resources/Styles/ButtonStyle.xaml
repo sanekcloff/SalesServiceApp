@@ -372,7 +372,43 @@
     </Style>
     
     <!--#endregion-->
-    
+
+    <!--#region RequestsButton-->
+
+    <ImageBrush x:Key="Request"
+                ImageSource="\Resources\Styles\Pictures\Button\Request.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Request_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Request_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Request_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Request_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="RequestsButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Request}"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Request_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Request_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
     <!--#region AddOrderButton-->
 
     <ImageBrush x:Key="AddOrder"
@@ -635,5 +671,119 @@
     </Style>
     
     <!--#endregion-->
-    
+
+    <!--#region CompleteButton-->
+
+    <ImageBrush x:Key="Complete"
+                ImageSource="\Resources\Styles\Pictures\Button\Completed.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Complete_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Completed_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Complete_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Completed_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="CompleteButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Complete}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Complete_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Complete_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region InProgressButton-->
+
+    <ImageBrush x:Key="InProgress"
+                ImageSource="\Resources\Styles\Pictures\Button\InProgress.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="InProgress_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\InProgress_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="InProgress_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\InProgress_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="InProgressButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource InProgress}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource InProgress_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource InProgress_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region WaitingButton-->
+
+    <ImageBrush x:Key="Waiting"
+                ImageSource="\Resources\Styles\Pictures\Button\Waiting.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Waiting_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Waiting_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Waiting_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Waiting_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="WaitingButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Waiting}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Waiting_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Waiting_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
 </ResourceDictionary>

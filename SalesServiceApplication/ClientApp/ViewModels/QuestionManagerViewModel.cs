@@ -10,7 +10,7 @@ namespace ClientApp.ViewModels
 {
     public class QuestionManagerViewModel : ViewModelBase
     {
-        public QuestionManagerViewModel(Client client, Question? question, QuestionService questionService)
+        public QuestionManagerViewModel(Client client, Question? question, QuestionService questionService, Window window)
         {
             if (question == null)
             {
@@ -24,7 +24,11 @@ namespace ClientApp.ViewModels
                 Question = question;
             }
             _questionService = questionService;
+            _window = window;
         }
+        #region Elements
+        private Window _window;
+        #endregion
         #region Services
         private QuestionService _questionService;
         #endregion
@@ -49,6 +53,7 @@ namespace ClientApp.ViewModels
                 Question.Text = Text;
                 _questionService.Insert(Question);
                 MessageBox.Show($"Вопрос на тему \"{Topic}\" создан!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                _window.Close();
             }
             else
                 MessageBox.Show("Заполните поля!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -61,6 +66,7 @@ namespace ClientApp.ViewModels
                 Question.Text= Text;
                 _questionService.Update(Question);
                 MessageBox.Show($"Вопрос обновлён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                _window.Close();
             }
             else
                 MessageBox.Show("Заполните поля!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);

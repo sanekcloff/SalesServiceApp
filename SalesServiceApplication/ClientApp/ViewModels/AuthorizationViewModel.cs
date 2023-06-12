@@ -1,5 +1,6 @@
 ﻿using AppData.Commands;
 using AppData.DataBaseData;
+using AppData.Entities;
 using AppData.Services;
 using AppData.ViewModel;
 using ClientApp.Views;
@@ -16,12 +17,14 @@ namespace ClientApp.ViewModels
         {
             _ctx = new();
             _clientService = new(_ctx);
+            _employeeService = new(_ctx);
         }
         #region Context
         private ApplicationDbContext _ctx;
         #endregion
         #region Services
         private ClientService _clientService;
+        private EmployeeService _employeeService;
         #endregion
         #region Fields & Properties
         private string _login;
@@ -44,10 +47,12 @@ namespace ClientApp.ViewModels
             }
             return isExist;
         }
+        private Employee? GetEmployee() => _employeeService.GetEmployees().SingleOrDefault(e=> e.Password == Password && e.Login == Login);
 
         private bool PropertiesIsNull() => (string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Login)) ? true : false;
         private void OpenClientWindow()
         {
+            var employee = GetEmployee();
             if (PropertiesIsNull())
                 MessageBox.Show("Все поля должны быть заполнены!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             else if (ClientIsExits())
@@ -56,6 +61,14 @@ namespace ClientApp.ViewModels
                 var CurrentWindow = Application.Current.MainWindow;
                 ClientWindow.Show();
                 Application.Current.MainWindow = ClientWindow;
+                CurrentWindow.Close();
+            }
+            else if (employee != null)
+            {
+                var EmployeeWindow = new EmployeeWindow(_ctx, employee, _employeeService);
+                var CurrentWindow = Application.Current.MainWindow;
+                EmployeeWindow.Show();
+                Application.Current.MainWindow = EmployeeWindow;
                 CurrentWindow.Close();
             }
             else

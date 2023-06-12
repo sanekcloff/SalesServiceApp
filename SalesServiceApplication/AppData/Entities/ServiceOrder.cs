@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppData.Storage.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace AppData.Entities
         public Employee Employee { get; set; } = null!;
 
         [NotMapped]
-        public bool IsCompleted { get => (DateOfComplete != null && EmployeeId != null && PaymentAmount!=null); }
+        public bool IsCompleted { get => Status == Statuses.Завершён.ToString(); }
+        public bool IsInProgress { get => Status == Statuses.Выполнение.ToString(); }
     }
 }

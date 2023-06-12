@@ -6,5 +6,8 @@
     
     <ImageSource x:Key="ReviewsIcon">\Resources\Icons\ReviewsIcon.ico</ImageSource>
     <ImageSource x:Key="QuestionsIcon">\Resources\Icons\QuestionsIcon.ico</ImageSource>
+    <ImageSource x:Key="NewsIcon">\Resources\Icons\NewsIcon.ico</ImageSource>
+    <ImageSource x:Key="AnswerIcon">\Resources\Icons\AnswerIcon.ico</ImageSource>
+    <ImageSource x:Key="CompletedIcon">\Resources\Icons\CompletedIcon.ico</ImageSource>
     
 </ResourceDictionary>

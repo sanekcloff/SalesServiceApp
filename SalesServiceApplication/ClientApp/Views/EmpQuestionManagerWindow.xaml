@@ -1,0 +1,40 @@
+﻿<Window x:Class="ClientApp.Views.EmpQuestionManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientApp.Views"
+        mc:Ignorable="d"
+        Title="Ответ на вопрос" Height="200" Width="320"
+        Background="{StaticResource scb_Primary}"
+        ResizeMode="NoResize"
+        Icon="{StaticResource AnswerIcon}">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="5"
+                    Grid.Row="1">
+
+            <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                     Height="100"
+                     Width="280"
+                     Style="{StaticResource TextTextBox}"/>
+
+            <Button Style="{StaticResource ButtonStyle1}"
+                    Margin="0,8,0,0"
+                    Width="120"
+                    Content="Сохранить ответ"
+                    x:Name="ActionButton"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Command="{Binding AddAnswerButton}"/>
+
+        </StackPanel>
+
+    </Grid>
+    
+</Window>

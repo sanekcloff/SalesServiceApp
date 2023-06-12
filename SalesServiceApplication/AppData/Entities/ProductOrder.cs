@@ -26,6 +26,7 @@ namespace AppData.Entities
         public Employee Employee { get; set; } = null!;
 
         [NotMapped]
-        public bool IsCompleted { get => (DateOfComplete!=null && EmployeeId!=null); }
+        public bool IsCompleted { get => Status == Statuses.Завершён.ToString(); }
+        public bool IsInProgress { get => Status == Statuses.Выполнение.ToString(); }
     }
 }

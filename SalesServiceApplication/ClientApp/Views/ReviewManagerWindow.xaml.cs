@@ -25,7 +25,7 @@ namespace ClientApp.Views
         public ReviewManagerWindow(Client client, Review? review, ReviewService reviewService)
         {
             InitializeComponent();
-            var viewModel = new ReviewManagerViewModel(client, review, reviewService);
+            var viewModel = new ReviewManagerViewModel(client, review, reviewService, this);
             if (review == null)
             {
                 Title = "Создание отызва";

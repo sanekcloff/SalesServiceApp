@@ -10,7 +10,7 @@ namespace ClientApp.ViewModels
 {
     public class ReviewManagerViewModel : ViewModelBase
     {
-        public ReviewManagerViewModel(Client client, Review? review, ReviewService reviewService)
+        public ReviewManagerViewModel(Client client, Review? review, ReviewService reviewService, Window window)
         {
             if (review==null)
             {
@@ -24,7 +24,11 @@ namespace ClientApp.ViewModels
                 Review = review;
             }
             _reviewService= reviewService;
+            _window = window;
         }
+        #region Elements
+        private Window _window;
+        #endregion
         #region Services
         private ReviewService _reviewService;
         #endregion
@@ -47,6 +51,7 @@ namespace ClientApp.ViewModels
                 Review.Grade = Grade;
                 _reviewService.Imsert(Review);
                 MessageBox.Show($"Отзыв с оценкой {Grade} создан!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                _window.Close();
             }
             else
                 MessageBox.Show("Отзыв должен содержать текст!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -59,6 +64,7 @@ namespace ClientApp.ViewModels
                 Review.Text = Text;
                 _reviewService.Update(Review);
                 MessageBox.Show($"Отзыв обновлён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                _window.Close();
             }
             else
                 MessageBox.Show("Заполните поля!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);

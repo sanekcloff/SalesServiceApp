@@ -17,9 +17,11 @@ namespace ClientApp.ViewModels
         public RegistrationViewModel(ApplicationDbContext ctx)
         {
             _clientService = new(ctx);
+            _employeeService = new(ctx);
         }
         #region Service
         private ClientService _clientService;
+        private EmployeeService _employeeService;
         #endregion
         #region Fields & Properties
         private string _lastName;
@@ -79,9 +81,9 @@ namespace ClientApp.ViewModels
             }
                 return value;
         }
-        private bool ClientIsExist() => _clientService.GetClients().Any(c => c.Password == Password && c.Login == Login);
-        private bool PasswordAlredyInUse() => _clientService.GetClients().Any(c=>c.Password==Password);
-        private bool LoginAlredyInUse() => _clientService.GetClients().Any(c => c.Login == Login);
+        private bool UserIsExist() => _clientService.GetClients().Any(c => c.Password == Password && c.Login == Login) || _employeeService.GetEmployees().Any(e => e.Login == Login && e.Password==Password);
+        private bool PasswordAlredyInUse() => _clientService.GetClients().Any(c=>c.Password==Password) || _employeeService.GetEmployees().Any(e=>e.Password==Password);
+        private bool LoginAlredyInUse() => _clientService.GetClients().Any(c => c.Login == Login) || _employeeService.GetEmployees().Any(e=>e.Login==Login);
         private bool EnailAlredyInUse() => _clientService.GetClients().Any(c => c.Email == Email);
         private bool PhoneAlredyInUse() => _clientService.GetClients().Any(c => c.Phone == Phone);
         private bool PropertiesIsNull() => (string.IsNullOrEmpty(LastName) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(MiddleName) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(Organization));
@@ -136,7 +138,7 @@ namespace ClientApp.ViewModels
                 MessageBox.Show("Все поля должны быть заполнены!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             else if (DataIsCorrect())
             {
-                if (ClientIsExist())
+                if (UserIsExist())
                     MessageBox.Show("Используйте другой логин и пароль!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
                 else if (EnailAlredyInUse())
                     MessageBox.Show("Используйте другой Email!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
