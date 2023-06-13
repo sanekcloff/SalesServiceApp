@@ -89,10 +89,17 @@
                             Margin="2,0"
                             VerticalAlignment="Center"/>
 
+                        <Button Style="{StaticResource AboutUsButton}"
+                            Command="{Binding ClientInfoProductButton}"
+                            HorizontalAlignment="Left"
+                            Margin="2,0"
+                            VerticalAlignment="Center"/>
+
                     </StackPanel>
 
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
+                               FontSize="11"
                                Text="{Binding ProductsCount, UpdateSourceTrigger=PropertyChanged}"
                                Style="{StaticResource TextBlock1}"
                                VerticalAlignment="Center"/>
@@ -184,10 +191,17 @@
                             Margin="2,0"
                             VerticalAlignment="Center"/>
 
+                        <Button Style="{StaticResource AboutUsButton}"
+                            Command="{Binding ClientInfoServiceButton}"
+                            HorizontalAlignment="Left"
+                            Margin="2,0"
+                            VerticalAlignment="Center"/>
+
                     </StackPanel>
 
                     <TextBlock Grid.Column="1"
                                HorizontalAlignment="Center"
+                               FontSize="11"
                                Text="{Binding ServicesCount, UpdateSourceTrigger=PropertyChanged}"
                                Style="{StaticResource TextBlock1}"
                                VerticalAlignment="Center"/>

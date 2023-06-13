@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApp.Views"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Ответ на вопрос" Height="200" Width="320"
         Background="{StaticResource scb_Primary}"
         ResizeMode="NoResize"

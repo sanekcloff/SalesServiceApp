@@ -517,7 +517,7 @@
                                             <ColumnDefinition Width="12"/>
                                             <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="135"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
@@ -872,6 +872,12 @@
                                                            TextWrapping="Wrap"
                                                        FontWeight="Bold"
                                                        FontSize="20"/>
+                                                <TextBlock Text="{Binding Client.Organization, UpdateSourceTrigger=PropertyChanged, StringFormat=Заказчик: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                <TextBlock Text="{Binding Client.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=ФИО: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
                                                        Style="{StaticResource TextBlock2}"
                                                            FontSize="18"/>
@@ -956,7 +962,7 @@
                                             <ColumnDefinition Width="12"/>
                                             <ColumnDefinition Width="140"/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition Width="135"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition Width="12"/>
                                         </Grid.ColumnDefinitions>
                                         <Border Grid.Column="0" Background="{StaticResource scb_Element}" CornerRadius="10,0,0,10"
@@ -977,6 +983,12 @@
                                                            TextWrapping="Wrap"
                                                            FontWeight="Bold"
                                                            FontSize="20"/>
+                                                <TextBlock Text="{Binding Client.Organization, UpdateSourceTrigger=PropertyChanged, StringFormat=Заказчик: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
+                                                <TextBlock Text="{Binding Client.FullName, UpdateSourceTrigger=PropertyChanged, StringFormat=ФИО: {0}}"
+                                                           Style="{StaticResource TextBlock2}"
+                                                           FontSize="18"/>
                                                 <TextBlock Text="{Binding DateOfAdd, UpdateSourceTrigger=PropertyChanged,ConverterCulture=ru-RU, StringFormat=Дата заказа: {0:d}}"
                                                            Style="{StaticResource TextBlock2}"
                                                            FontSize="18"/>
@@ -1003,7 +1015,8 @@
                                         <StackPanel Grid.Column="3"
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Top"
-                                                    Margin="5">
+                                                    Margin="5"
+                                                    x:Name="InProgress2">
                                             <TextBlock Text="Цена за час:"
                                                        FontSize="18"
                                                        Style="{StaticResource TextBlock2}"/>
@@ -1016,6 +1029,19 @@
                                                        Style="{StaticResource TextBlock2}"
                                                        x:Name="TextBlock2"
                                                        Visibility="Collapsed"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="3"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Top"
+                                                    Margin="5"
+                                                    x:Name="Completed2"
+                                                    Visibility="Collapsed">
+                                            <TextBlock Text="Цена:"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"/>
+                                            <TextBlock Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged, ConverterCulture=ru-RU, StringFormat={}{0:c}}"
+                                                       FontSize="18"
+                                                       Style="{StaticResource TextBlock2}"/>
                                         </StackPanel>
                                         <Border Grid.Column="4" Background="{StaticResource scb_Element}" CornerRadius="0,10,10,0"
                                                 x:Name="SideBorder2"/>
@@ -1039,6 +1065,8 @@
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsCompleted}" Value="true">
                                         <Setter TargetName="Completed" Property="Visibility" Value="Visible"/>
+                                        <Setter TargetName="Completed2" Property="Visibility" Value="Visible"/>
+                                        <Setter TargetName="InProgress2" Property="Visibility" Value="Collapsed"/>
                                     </DataTrigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>

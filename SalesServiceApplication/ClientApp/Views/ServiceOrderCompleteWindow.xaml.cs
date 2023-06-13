@@ -29,7 +29,7 @@ namespace ClientApp.Views
                 Title = "Укажите кол-во часов и стоимость за час";
             else
             {
-                Title = "Укажите стоимость за час";
+                Title = "Укажите кол-во часов";
                 CostTextBox.Visibility=Visibility.Collapsed;
             }
             DataContext = new ServiceOrderCompleteViewModel(serviceOrder, serviceOrderService, this);
@@ -45,8 +45,8 @@ namespace ClientApp.Views
 
         private void CostTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!(Char.IsDigit(e.Text, 0) || (e.Text == ".")
-               && (!CostTextBox.Text.Contains(".")
+            if (!(Char.IsDigit(e.Text, 0) || (e.Text == ",")
+               && (!CostTextBox.Text.Contains(",")
                && CostTextBox.Text.Length != 0)))
             {
                 e.Handled = true;

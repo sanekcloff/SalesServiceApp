@@ -254,6 +254,7 @@ namespace ClientApp.ViewModels
                 SelectedServiceOrder.Status = Statuses.Выполнение.ToString();
                 SelectedServiceOrder.Employee = _employee;
                 SelectedServiceOrder.DateOfComplete = null;
+                SelectedServiceOrder.PaymentAmount = null;
                 _serviceOrderService.Update(SelectedServiceOrder);
                 MessageBox.Show($"Статус обновлён!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
                 UpdateLists();
@@ -264,16 +265,31 @@ namespace ClientApp.ViewModels
             if (IsSelectedServiceOrderNull())
                 MessageBox.Show($"Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             else if (IsServiceOrderEmployeeExist())
-                MessageBox.Show($"Этим заказом занимается {SelectedProductOrder.Employee.FullName}!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"Этим заказом занимается {SelectedServiceOrder.Employee.FullName}!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             else
             {
                 SelectedServiceOrder.Status = Statuses.Ожидание.ToString();
                 SelectedServiceOrder.Employee = null;
                 SelectedServiceOrder.DateOfComplete = null;
+                SelectedServiceOrder.PaymentAmount = null;
                 _serviceOrderService.Update(SelectedServiceOrder);
                 MessageBox.Show($"Статус обновлён!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
                 UpdateLists();
             }
+        }
+        private void ClientInfoProduct()
+        {
+            if (IsSelectedProductOrderNull())
+                MessageBox.Show($"Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                new ClientInfoWindow(SelectedProductOrder).ShowDialog();
+        }
+        private void ClientInfoService()
+        {
+            if (IsSelectedServiceOrderNull())
+                MessageBox.Show($"Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                new ClientInfoWindow(SelectedServiceOrder).ShowDialog();
         }
         #endregion
         #region Command
@@ -283,6 +299,8 @@ namespace ClientApp.ViewModels
         public ICommand CompleteServiceOrderButton => new Command(completeorder => CompleteServiceOrder());
         public ICommand InProgressServiceOrderButton => new Command(inprogressorder => InProgressServiceOrder());
         public ICommand WaitingServiceOrderButton => new Command(waitingorder => WaitingServiceOrder());
+        public ICommand ClientInfoProductButton => new Command(clientinfoproduct => ClientInfoProduct());
+        public ICommand ClientInfoServiceButton => new Command(clientinfoService => ClientInfoService());
         #endregion}
     }
 }

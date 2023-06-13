@@ -83,10 +83,11 @@
             </StackPanel>
 
             <TextBlock Grid.Column="1"
-                               HorizontalAlignment="Center"
-                               Text="{Binding QuestionCount, UpdateSourceTrigger=PropertyChanged}"
-                               Style="{StaticResource TextBlock1}"
-                               VerticalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                       FontSize="11"
+                       Text="{Binding QuestionCount, UpdateSourceTrigger=PropertyChanged}"
+                       Style="{StaticResource TextBlock1}"
+                       VerticalAlignment="Center"/>
 
         </Grid>
 

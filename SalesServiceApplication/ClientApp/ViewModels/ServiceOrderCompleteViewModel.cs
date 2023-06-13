@@ -17,36 +17,56 @@ namespace ClientApp.ViewModels
         public ServiceOrderCompleteViewModel(ServiceOrder serviceOrder, ServiceOrderService serviceOrderService, Window window)
         {
             _serviceOrder = serviceOrder;
-            if (serviceOrder.Service.IsNegotiable)
-                Cost = serviceOrder.Service.CostPerHour;
+            if (!serviceOrder.Service.IsNegotiable)
+                Cost = serviceOrder.Service.CostPerHour.ToString();
             _serviceOrderService = serviceOrderService;
             _window = window;
         }
+
         #region Elements
         private Window _window;
         #endregion
+
         #region Services
         private ServiceOrderService _serviceOrderService;
         #endregion
+
         #region Fields & Properties
         private ServiceOrder _serviceOrder;
 
-        private int _hours;
-        private decimal _cost;
+        private string _hours;
+        private string _cost;
 
-        public int Hours { get => _hours; set => Set(ref _hours, value, nameof(Hours)); }
-        public decimal Cost { get => _cost; set => Set(ref _cost, value, nameof(Cost)); }
+        public string Hours
+        {
+            get => _hours; set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    value = Convert.ToInt32(value).ToString();
+                Set(ref _hours, value, nameof(Hours));
+            }
+        }
+        public string Cost
+        {
+            get => _cost; set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    value = Convert.ToDecimal(value).ToString();
+                Set(ref _cost, value, nameof(Cost));
+            }
+        }
         #endregion
+
         #region Methods
-        
         private void UpdateOrder()
         {
-            _serviceOrder.PaymentAmount = (decimal)Cost * Hours;
+            _serviceOrder.PaymentAmount = Convert.ToDecimal(Cost) * Convert.ToInt32(Hours);
             _serviceOrderService.Update(_serviceOrder);
             MessageBox.Show($"Статус обновлён!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
             _window.Close();
         }
         #endregion
+
         #region Commands
         public ICommand UpdateOrderButton => new Command(updateorder => UpdateOrder());
         #endregion

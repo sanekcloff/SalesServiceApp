@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApp.Views"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Окно работника" MinHeight="600" MinWidth="1000"
         Width="1000"
         Height="600"
