@@ -25,6 +25,10 @@
                     Command="{Binding NewsPageButton}"
                     Style="{StaticResource NewsButton}"/>
 
+            <Button Content="Скидки"
+                    Command="{Binding DiscountsPageButton}"
+                    Style="{StaticResource DiscountsButton}"/>
+
             <Button Content="Главное"
                     Command="{Binding RequestsPageButton}"
                     Style="{StaticResource RequestsButton}"/>
@@ -32,7 +36,6 @@
             <Button Content="Вопросы"
                     Command="{Binding QuestionsPageButton}"
                     Style="{StaticResource QuestionsButton}"/>
-
 
             <Button Content="Выйти из учётки"
                     Command="{Binding LogOutButton}"

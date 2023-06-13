@@ -373,6 +373,42 @@
 
     <!--#endregion-->
 
+    <!--#region DiscountsButton-->
+
+    <ImageBrush x:Key="Discount"
+                ImageSource="\Resources\Styles\Pictures\Button\Discount.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Discount_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Discount_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Discount_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Discount_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="DiscountsButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Margin" Value="5 10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Discount}"
+                            x:Name="Border"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Discount_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Discount_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
     <!--#region AddOrderButton-->
 
     <ImageBrush x:Key="AddOrder"
@@ -779,6 +815,44 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource AboutUs_Pressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region SaleButton-->
+
+    <ImageBrush x:Key="Sale"
+                ImageSource="\Resources\Styles\Pictures\Button\Sale.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Sale_Active"
+                ImageSource="\Resources\Styles\Pictures\Button\Sale_Active.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="Sale_Pressed"
+                ImageSource="\Resources\Styles\Pictures\Button\Sale_Pressed.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="SaleButton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource Sale}"
+                            Height="30"
+                            Margin="5"
+                            x:Name="Border">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Sale_Active}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Sale_Pressed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

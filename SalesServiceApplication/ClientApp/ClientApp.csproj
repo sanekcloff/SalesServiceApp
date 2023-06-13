@@ -58,6 +58,9 @@
     <None Remove="Resources\Styles\Pictures\Button\Delete.png" />
     <None Remove="Resources\Styles\Pictures\Button\Delete_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Delete_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Discount.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Discount_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Discount_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Button\Edit.png" />
     <None Remove="Resources\Styles\Pictures\Button\Edit_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Edit_Pressed.png" />
@@ -94,6 +97,9 @@
     <None Remove="Resources\Styles\Pictures\Button\Reviews.png" />
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Reviews_Pressed.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Sale.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Sale_Active.png" />
+    <None Remove="Resources\Styles\Pictures\Button\Sale_Pressed.png" />
     <None Remove="Resources\Styles\Pictures\Button\Waiting.png" />
     <None Remove="Resources\Styles\Pictures\Button\Waiting_Active.png" />
     <None Remove="Resources\Styles\Pictures\Button\Waiting_Pressed.png" />
@@ -167,6 +173,15 @@
     <Resource Include="Resources\Styles\Pictures\Button\Completed_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Discount.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Discount_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Discount_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\InProgress.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -192,6 +207,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\Request_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Sale.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Sale_Active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Styles\Pictures\Button\Sale_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Styles\Pictures\Button\Waiting.png">

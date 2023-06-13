@@ -57,6 +57,7 @@ namespace ClientApp.ViewModels
         #endregion
 
         #region Methods
+        private void OpenDiscountPage() => EmployeePage.Content = new EmpDiscountPage(_employee, _productService, _categoryService, _serviceService);
         private void OpenPurchasesPage() => EmployeePage.Content = new EmpPurchasesPage(_employee, _productService, _categoryService, _serviceService, _productOrderService, _serviceOrderService);
         private void OpenQuestionsPage() => EmployeePage.Content = new EmpQuestionsPage(_employee, _questionService);
         private void OpenNewsPage() => EmployeePage.Content = new EmpNewsPage(_employee, _newsService);
@@ -72,6 +73,7 @@ namespace ClientApp.ViewModels
 
         #region Commands
         public ICommand RequestsPageButton => new Command(mainpage => OpenPurchasesPage());
+        public ICommand DiscountsPageButton => new Command(mainpage => OpenDiscountPage());
         public ICommand QuestionsPageButton => new Command(employeepage => OpenQuestionsPage());
         public ICommand NewsPageButton => new Command(newspage => OpenNewsPage());
         public ICommand LogOutButton => new Command(logout => LogOut());
