@@ -158,7 +158,7 @@ namespace ClientApp.ViewModels
         private void CreateProductPdf()
         {
             if (SelectedProductOrder!=null)
-                PdfConverter.CretePdfFile(SelectedProductOrder);
+                PDF.CreateProductOrderCheck(SelectedProductOrder);
             else
                 MessageBox.Show("Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
         }
