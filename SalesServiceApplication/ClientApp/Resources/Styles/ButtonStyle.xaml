@@ -476,7 +476,7 @@
 
     <Style x:Key="PdfButton" TargetType="Button">
         <Setter Property="Height" Value="40"/>
-        <Setter Property="Width" Value="160"/>
+        <Setter Property="Width" Value="185"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -491,7 +491,7 @@
                             x:Name="Border">
                         </Border>
                         <TextBlock Grid.Column="1"
-                                   Text="Получить счёт"
+                                   Text="Сформировать PDF"
                                    FontFamily="Cascadia Code"
                                    FontSize="14"
                                    Foreground="{StaticResource scb_Element}"

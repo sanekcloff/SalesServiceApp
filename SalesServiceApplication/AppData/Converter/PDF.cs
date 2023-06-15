@@ -44,5 +44,30 @@ namespace AppData.Converter
             // ...and start a viewer.
             Process.Start(new ProcessStartInfo(filename) { UseShellExecute = true });
         }
+        public static void CreateServiceOrderCheck(ServiceOrder serviceOrder)
+        {
+            // Create a MigraDoc document.
+            var document = Documents.CreateDocument(serviceOrder);
+
+            // Write MigraDoc DDL into a string.
+            var ddl = MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToString(document);
+
+            // Write MigraDoc DDL to a file.
+            MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(document, "MigraDoc.mdddl");
+
+            var renderer = new PdfDocumentRenderer()
+            {
+                Document = document
+            };
+
+            renderer.RenderDocument();
+
+            var filename = "PdfFile.pdf";
+            // Save the document...
+            renderer.PdfDocument.Save(filename);
+
+            // ...and start a viewer.
+            Process.Start(new ProcessStartInfo(filename) { UseShellExecute = true });
+        }
     }
 }

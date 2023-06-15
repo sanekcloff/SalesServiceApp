@@ -165,7 +165,7 @@ namespace ClientApp.ViewModels
         private void CreateServicePdf()
         {
             if (SelectedServiceOrder != null)
-                PdfConverter.CretePdfFile(SelectedServiceOrder);
+                PDF.CreateServiceOrderCheck(SelectedServiceOrder);
             else
                 MessageBox.Show("Выберите заказ!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
         }
